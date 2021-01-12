@@ -1,0 +1,18 @@
+.el-breadcrumb {
+  line-height: 50px;
+}
+.main {
+  background-color: #ffffff;
+  box-shadow:2px 2px 30px #e3e3e3;
+}
+.left-buttons {
+  float: left;
+  line-height: 0;
+}
+.right-research {
+  float: right;
+  line-height: 0;
+}
+.foot-button {
+  float: right;
+}
