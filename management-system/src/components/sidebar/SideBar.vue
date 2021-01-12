@@ -16,18 +16,10 @@
 
 <script>
 export default {
-  name: "SideBar",
-  props: {
-    path: String
-  },
-  methods: {
-    itemClick() {
-      console.log("test")
-    }
-  }
+  name: "SideBar"
 }
 </script>
 
 <style scoped>
-@import "../../assets/css/sidebar.css";
+@import "../../assets/css/components/sidebar.css";
 </style>

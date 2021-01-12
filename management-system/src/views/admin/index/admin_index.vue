@@ -91,5 +91,5 @@ export default {
 </script>
 
 <style scoped>
-@import "../../../assets/css/admin_index/admin_index.css";
+@import "../../../assets/css/admin/admin_index/admin_index.css";
 </style>

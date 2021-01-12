@@ -49,5 +49,5 @@ export default {
 </script>
 
 <style scoped>
-@import "../../assets/css/navmenu.css";
+@import "../../assets/css/components/navmenu.css";
 </style>

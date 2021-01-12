@@ -125,5 +125,5 @@ export default {
 </script>
 
 <style scoped>
-@import "../../../../assets/css/manage_admin/manage_admin.css";
+@import "../../../../assets/css/admin/manage_admin/manage_admin.css";
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <el-menu-item path="/admin_home" @click="itemClick">
+  <el-menu-item @click="itemClick">
     <slot name="item-icon"></slot>
     <slot name="item-title"></slot>
   </el-menu-item>
