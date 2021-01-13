@@ -1,7 +1,7 @@
 <template>
   <div class="background">
     <el-container>
-      <el-header height="200px" class="login_head">
+      <el-header height="150px" class="login_head">
         <img src="../../../assets/img/components/register.png" alt="" class="register">
       </el-header>
       <el-main>

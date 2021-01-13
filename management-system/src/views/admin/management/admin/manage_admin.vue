@@ -2,7 +2,7 @@
   <div>
     <el-header>
       <bread-crumb>
-        <el-breadcrumb-item><a href="/manage_admin">管理员</a></el-breadcrumb-item>
+        <el-breadcrumb-item><a href="/admin/manage_admin">管理员</a></el-breadcrumb-item>
         <el-breadcrumb-item>人员列表</el-breadcrumb-item>
       </bread-crumb>
     </el-header>
@@ -100,7 +100,6 @@ export default {
       multipleSelection: []
     }
   },
-
   methods: {
     toggleSelection(rows) {
       if (rows) {
