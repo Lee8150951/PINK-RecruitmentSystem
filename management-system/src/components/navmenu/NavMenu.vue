@@ -25,7 +25,7 @@
           <i class="el-icon-message"></i>
         </el-badge>
       </el-menu-item>
-      <el-menu-item class="user">
+      <el-menu-item class="user" @click="getUserJump('/admin/admin_profile')">
         <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
       </el-menu-item>
     </el-menu>
@@ -43,6 +43,9 @@ export default {
   methods: {
     contraction() {
       this.$store.commit("contraction")
+    },
+    getUserJump(e) {
+      this.$router.push(e)
     }
   }
 }

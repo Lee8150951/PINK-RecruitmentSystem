@@ -12,6 +12,7 @@ const RegisterCompany = () => import("../views/premise/register/company_register
 // 管理员模块
 const AdminMain = () => import("../views/admin/main")
 const AdminIndex = () => import("../views/admin/index/admin_index")
+const AdminProfile = () => import("../views/admin/profile/admin_profile")
 const ManageAdmin = () => import("../views/admin/management/admin/manage_admin")
 const ManageCompany = () => import("../views/admin/management/company/manage_company")
 const ManageUser = () => import("../views/admin/management/user/manage_user")
@@ -77,6 +78,10 @@ const routes = [
       {
         path: 'manage_user',
         component: ManageUser
+      },
+      {
+        path: 'admin_profile',
+        component: AdminProfile
       }
     ]
   }
