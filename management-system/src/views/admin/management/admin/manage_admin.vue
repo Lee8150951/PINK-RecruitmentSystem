@@ -10,8 +10,14 @@
       <div>
         <el-header>
           <div class="left-buttons">
-            <el-button type="success" icon="el-icon-edit">新增</el-button>
-            <el-button type="danger" icon="el-icon-delete">删除</el-button>
+            <button class="el-button el-button--success" path="/admin/add_admin" @click="addClick($event)">
+              <i class="el-icon-edit"></i>
+              新增
+            </button>
+            <button class="el-button el-button--danger" @click="deleteClick($event)">
+              <i class="el-icon-delete"></i>
+              删除
+            </button>
           </div>
           <div class="right-research">
             <el-input placeholder="请输入内容" class="input-with-select">
@@ -118,11 +124,19 @@ export default {
     },
     handleDelete(index, row) {
       console.log(index, row);
+    },
+    addClick(e) {
+      let path = e.target.getAttribute("path")
+      this.$router.push(path)
+    },
+    deleteClick(e) {
+      console.log(e)
     }
   }
 }
 </script>
 
 <style scoped>
+@import "../../../../assets/css/admin/manage_admin/admin_public.css";
 @import "../../../../assets/css/admin/manage_admin/manage_admin.css";
 </style>
