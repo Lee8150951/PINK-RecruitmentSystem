@@ -10,10 +10,6 @@
       <div>
         <el-header>
           <div class="left-buttons">
-            <button class="el-button el-button--success" path="/admin/add_user" @click="addClick($event)">
-              <i class="el-icon-edit"></i>
-              新增
-            </button>
             <button class="el-button el-button--danger" @click="deleteClick($event)">
               <i class="el-icon-delete"></i>
               删除
@@ -28,14 +24,13 @@
         <el-main>
           <el-table ref="multipleTable" :data="tableData" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange" stripe>
             <el-table-column type="selection" width="70"></el-table-column>
-            <el-table-column prop="num" label="编号" width="120"></el-table-column>
-            <el-table-column prop="name" label="姓名" width="170"></el-table-column>>
-            <el-table-column prop="expect" label="期望岗位" width="170"></el-table-column>
-            <el-table-column prop="graduation" label="毕业院校" width="170"></el-table-column>
-            <el-table-column prop="city" label="期望城市" width="170"></el-table-column>
+            <el-table-column prop="id" label="编号" width="120"></el-table-column>
+            <el-table-column prop="name" label="姓名" width="200"></el-table-column>
+            <el-table-column prop="sex" label="性别" width="200"></el-table-column>
+            <el-table-column prop="type" label="类别" width="200"></el-table-column>
             <el-table-column label="操作">
               <template slot-scope="scope">
-                <el-button size="mini" type="warning" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                <el-button size="mini" type="primary" @click="handleDetail(scope.$index, scope.row)">详情</el-button>
                 <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
               </template>
             </el-table-column>
@@ -45,6 +40,35 @@
             <el-pagination small layout="prev, pager, next" :total="50"></el-pagination>
           </div>
         </el-main>
+        <el-dialog title="编辑管理员" :visible.sync="detailVisible">
+          <el-form :model="detail">
+            <el-form-item label="ID：" :label-width="formLabelWidth">
+              <el-input v-model="detail.id" autocomplete="off" :disabled="true"></el-input>
+            </el-form-item>
+            <el-form-item label="姓名：" :label-width="formLabelWidth">
+              <el-input v-model="detail.name" autocomplete="off" :disabled="true"></el-input>
+            </el-form-item>
+            <el-form-item label="性别：" :label-width="formLabelWidth">
+              <el-input v-model="detail.sex" autocomplete="off" :disabled="true"></el-input>
+            </el-form-item>
+            <el-form-item label="求职者类别：" :label-width="formLabelWidth">
+              <el-input v-model="detail.type" autocomplete="off" :disabled="true"></el-input>
+            </el-form-item>
+            <el-form-item label="年龄：" :label-width="formLabelWidth">
+              <el-input v-model="detail.age" autocomplete="off" :disabled="true"></el-input>
+            </el-form-item>
+            <el-form-item label="电话：" :label-width="formLabelWidth">
+              <el-input v-model="detail.phone" autocomplete="off" :disabled="true"></el-input>
+            </el-form-item>
+            <el-form-item label="邮箱：" :label-width="formLabelWidth">
+              <el-input v-model="detail.email" autocomplete="off" :disabled="true"></el-input>
+            </el-form-item>
+          </el-form>
+          <div slot="footer" class="dialog-footer">
+            <el-button @click="detailVisible = false">取 消</el-button>
+            <el-button type="primary" @click="detailVisible = false">确 定</el-button>
+          </div>
+        </el-dialog>
       </div>
     </el-main>
   </div>
@@ -59,49 +83,53 @@ export default {
   data() {
     return {
       tableData: [{
-        num: 1001,
+        id: 1001,
         name: '马逸超',
-        expect: '后端开发',
-        graduation: '华中科技大学',
-        city: '深圳'
+        sex: '男',
+        type: '实习'
       },{
-        num: 1002,
-        name: '李奕山',
-        expect: '前端开发',
-        graduation: '华中科技大学',
-        city: '上海'
+        id: 1002,
+        name: '马逸超',
+        sex: '男',
+        type: '实习'
       },{
-        num: 1003,
-        name: '马化腾',
-        expect: '市场管理',
-        graduation: '深圳大学',
-        city: '深圳'
+        id: 1003,
+        name: '马逸超',
+        sex: '男',
+        type: '实习'
       },{
-        num: 1004,
-        name: '马云',
-        expect: '营销',
-        graduation: '杭州电子科技大学',
-        city: '杭州'
+        id: 1004,
+        name: '马逸超',
+        sex: '男',
+        type: '实习'
       },{
-        num: 1005,
-        name: '李彦宏',
-        expect: '广告设计',
-        graduation: '北京大学',
-        city: '北京'
+        id: 1005,
+        name: '马逸超',
+        sex: '男',
+        type: '实习'
       },{
-        num: 1006,
-        name: '汪滔',
-        expect: '财会',
-        graduation: '香港科技大学',
-        city: '深圳'
+        id: 1006,
+        name: '马逸超',
+        sex: '男',
+        type: '实习'
       },{
-        num: 1007,
-        name: '王健林',
-        expect: '审计',
-        graduation: '无',
-        city: '成都'
+        id: 1007,
+        name: '马逸超',
+        sex: '男',
+        type: '实习'
       }],
-      multipleSelection: []
+      multipleSelection: [],
+      detailVisible: false,
+      detail: {
+        id: '',
+        name: '',
+        sex: '',
+        type: '',
+        age: '',
+        phone: '',
+        email: ''
+      },
+      formLabelWidth: '120px'
     }
   },
   methods: {
@@ -117,15 +145,12 @@ export default {
     handleSelectionChange(val) {
       this.multipleSelection = val;
     },
-    handleEdit(index, row) {
+    handleDetail(index, row) {
+      this.detailVisible = true;
       console.log(index, row);
     },
     handleDelete(index, row) {
       console.log(index, row);
-    },
-    addClick(e) {
-      let path = e.target.getAttribute("path")
-      this.$router.push(path)
     },
     deleteClick(e) {
       console.log(e)

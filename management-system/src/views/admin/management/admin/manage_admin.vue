@@ -38,8 +38,8 @@
               </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
-              <el-button @click="dialogFormVisible = false">取 消</el-button>
-              <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+              <el-button @click="AddVisible = false">取 消</el-button>
+              <el-button type="primary" @click="AddVisible = false">确 定</el-button>
             </div>
           </el-dialog>
           <div class="right-research">
@@ -71,26 +71,26 @@
           </div>
         </el-main>
         <el-dialog title="编辑管理员" :visible.sync="EditVisible">
-          <el-form :model="add_admin">
+          <el-form :model="edit_admin">
             <el-form-item label="ID：" :label-width="formLabelWidth">
-              <el-input v-model="add_admin.id" autocomplete="off"></el-input>
+              <el-input v-model="edit_admin.id" autocomplete="off"></el-input>
             </el-form-item>
             <el-form-item label="姓名：" :label-width="formLabelWidth">
-              <el-input v-model="add_admin.name" autocomplete="off"></el-input>
+              <el-input v-model="edit_admin.name" autocomplete="off"></el-input>
             </el-form-item>
             <el-form-item label="密码：" :label-width="formLabelWidth">
-              <el-input type="password" v-model="add_admin.pwd" autocomplete="off"></el-input>
+              <el-input type="password" v-model="edit_admin.pwd" autocomplete="off"></el-input>
             </el-form-item>
             <el-form-item label="权限：" :label-width="formLabelWidth">
-              <el-select v-model="add_admin.power" placeholder="请选择权限">
+              <el-select v-model="edit_admin.power" placeholder="请选择权限">
                 <el-option label="超级管理员" value="0"></el-option>
                 <el-option label="普通管理员" value="1"></el-option>
               </el-select>
             </el-form-item>
           </el-form>
           <div slot="footer" class="dialog-footer">
-            <el-button @click="dialogFormVisible = false">取 消</el-button>
-            <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+            <el-button @click="EditVisible = false">取 消</el-button>
+            <el-button type="primary" @click="EditVisible = false">确 定</el-button>
           </div>
         </el-dialog>
       </div>

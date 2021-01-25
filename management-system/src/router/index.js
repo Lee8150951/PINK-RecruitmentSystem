@@ -17,9 +17,7 @@ const ManageAdmin = () => import("../views/admin/management/admin/manage_admin")
 const ManageCompany = () => import("../views/admin/management/company/manage_company")
 const ManageUser = () => import("../views/admin/management/user/manage_user")
 const AddCompany = () => import("../views/admin/management/company/add_company")
-const AddUser = () => import("../views/admin/management/user/add_user")
 const EditCompany = () => import("../views/admin/management/company/edit_company")
-const EditUser = () => import("../views/admin/management/user/edit_user")
 
 Vue.use(Router)
 
@@ -90,14 +88,6 @@ const routes = [
       {
         path: 'manage_user',
         component: ManageUser
-      },
-      {
-        path: 'add_user',
-        component: AddUser
-      },
-      {
-        path: 'edit_user',
-        component: EditUser
       },
       {
         path: 'admin_profile',
