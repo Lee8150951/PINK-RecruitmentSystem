@@ -1,5 +1,5 @@
 <template>
-<h2>Hello Vue!</h2>
+<h2>premise</h2>
 </template>
 
 <script>

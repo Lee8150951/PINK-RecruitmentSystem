@@ -1,0 +1,11 @@
+.el-menu {
+  padding: 0 150px;
+  box-shadow: 0 3px 15px #d0d0d0;
+}
+.logo {
+  height: 80%;
+}
+.is-disabled {
+  opacity: 1;
+  cursor:default;
+}

@@ -1,0 +1,19 @@
+/*顶部导航栏*/
+.header {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 0;
+}
+/*右侧边栏*/
+
+/*主题*/
+.main {
+  margin-top: 60px;
+  background-color: #fffdfd;
+}
+.footer {
+  height: 280px;
+  width: 100%;
+  text-align: center;
+}
