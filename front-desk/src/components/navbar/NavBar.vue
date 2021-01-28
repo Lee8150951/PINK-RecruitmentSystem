@@ -2,22 +2,22 @@
   <nav class="navbar">
     <div class="item-top">
       <div class="bar-item">
-        <el-tooltip class="item" effect="dark" content="提示文字" placement="left-start">
+        <el-tooltip class="item" effect="dark" content="提示文字" placement="left">
           <el-button type="text"><i class="el-icon-setting"></i></el-button>
         </el-tooltip>
       </div>
       <div class="bar-item">
-        <el-tooltip class="item" effect="dark" content="提示文字" placement="left-start">
+        <el-tooltip class="item" effect="dark" content="提示文字" placement="left">
           <el-button type="text"><i class="el-icon-star-off"></i></el-button>
         </el-tooltip>
       </div>
       <div class="bar-item">
-        <el-tooltip class="item" effect="dark" content="提示文字" placement="left-start">
+        <el-tooltip class="item" effect="dark" content="提示文字" placement="left">
           <el-button type="text"><i class="el-icon-folder"></i></el-button>
         </el-tooltip>
       </div>
       <div class="bar-item">
-        <el-tooltip class="item" effect="dark" content="提示文字" placement="left-start">
+        <el-tooltip class="item" effect="dark" content="提示文字" placement="left">
           <el-button type="text"><i class="el-icon-pie-chart"></i></el-button>
         </el-tooltip>
       </div>
@@ -46,5 +46,5 @@ export default {
 </script>
 
 <style scoped>
-@import "../../assets/css/system/navbar.css";
+@import "../../assets/css/components/navbar.css";
 </style>

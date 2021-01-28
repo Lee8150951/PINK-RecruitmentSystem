@@ -5,15 +5,10 @@
   position: fixed;
   top: 0;
 }
-/*右侧边栏*/
-
-/*主题*/
+/*主体*/
 .main {
   margin-top: 60px;
-  background-color: #fffdfd;
 }
-.footer {
-  height: 280px;
-  width: 100%;
-  text-align: center;
+.route {
+  background-color: #f6f6f8;
 }
