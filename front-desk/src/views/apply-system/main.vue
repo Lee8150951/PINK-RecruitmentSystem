@@ -2,12 +2,12 @@
   <div class="main">
     <header class="header" style="z-index: 1">
       <nav-menu>
-        <el-menu-item index="1" style="margin-left: 10%">首页</el-menu-item>
-        <el-menu-item index="2">职位</el-menu-item>
-        <el-menu-item index="3">公司</el-menu-item>
-        <el-menu-item index="4">论坛</el-menu-item>
-        <el-menu-item index="5">APP</el-menu-item>
-        <el-menu-item index="6">资讯</el-menu-item>
+        <nav-menu-item style="margin-left: 10%" path="/index/apply_home">首页</nav-menu-item>
+        <nav-menu-item path="/index/apply_position">职位</nav-menu-item>
+        <nav-menu-item path="/index/apply_company">公司</nav-menu-item>
+        <nav-menu-item path="/index/apply_forum">论坛</nav-menu-item>
+        <nav-menu-item path="/index/apply_application">APP</nav-menu-item>
+        <nav-menu-item path="/index/apply_news">资讯</nav-menu-item>
         <el-submenu index="7" style="float: right">
           <template slot="title">
             <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
@@ -33,13 +33,15 @@
 <script>
 // NavMenu组件
 import NavMenu from "../../components/navmenu/NavMenu";
+// NavMenuItem组件
+import NavMenuItem from "../../components/navmenu/NavMenuItem";
 // NavBar组件
 import NavBar from "../../components/navbar/NavBar";
 // Footer组件
 import FooterBar from "../../components/footer/Footer";
 export default {
   name: "main",
-  components: {FooterBar, NavBar, NavMenu},
+  components: {NavMenuItem, FooterBar, NavBar, NavMenu},
   data() {
     return {
       activeIndex: '1',

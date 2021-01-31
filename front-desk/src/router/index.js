@@ -6,6 +6,12 @@ const Premise = () => import("../views/premise/main")
 // 应聘系统主体模块
 const System = () => import("../views/apply-system/main")
 const ApplyMain = () => import("../views/apply-system/home")
+const ApplyProfile = () => import("../views/apply-system/profile")
+const ApplyPosition = () => import("../views/apply-system/position")
+const ApplyApplication = () => import("../views/apply-system/application")
+const ApplyCompany = () => import("../views/apply-system/company")
+const ApplyForum = () => import("../views/apply-system/forum")
+const ApplyNews = () => import("../views/apply-system/news")
 
 Vue.use(Router)
 
@@ -26,6 +32,30 @@ const routes = [
       {
         path: 'apply_home',
         component: ApplyMain
+      },
+      {
+        path: "apply_profile",
+        component: ApplyProfile
+      },
+      {
+        path: "apply_company",
+        component: ApplyCompany
+      },
+      {
+        path: "apply_forum",
+        component: ApplyForum
+      },
+      {
+        path: "apply_position",
+        component: ApplyPosition
+      },
+      {
+        path: "apply_news",
+        component: ApplyNews
+      },
+      {
+        path: "apply_application",
+        component: ApplyApplication
       }
     ]
   }

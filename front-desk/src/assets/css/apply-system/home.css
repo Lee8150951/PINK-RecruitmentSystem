@@ -4,3 +4,58 @@
 .search {
   margin-top: 40px;
 }
+.preview {
+  margin-top: 50px;
+}
+.right-preview {
+  margin-left: 12px;
+}
+.overview {
+  background-color: #ffffff;
+  box-shadow: -5px 5px 15px #dbdbdb;
+}
+.carousel-img {
+  height: 302px;
+  box-shadow: -5px 5px 15px #dbdbdb;
+}
+.el-carousel {
+  z-index: 0;
+}
+.left-preview-content {
+  height: 302px;
+}
+.left-preview-content ul li {
+  padding: 3px 0 0 25px;
+}
+.left-item {
+  font-weight: bold;
+}
+.right-item {
+  padding-left: 10px;
+}
+.el-button--text {
+  font-size: 13px;
+  color: #61687c;
+}
+.preview-btn {
+  float: right;
+  margin-right: 15%;
+}
+.title {
+  margin-top: 50px;
+}
+.title-content {
+  text-align: center;
+  font-size: 23px;
+  font-weight: bold;
+  color: #61687c;
+}
+.companies {
+  margin-top: 30px;
+}
+.company-content {
+  height: 240px;
+  margin-left: 20px;
+  background-color: #fff;
+  box-shadow: -5px 5px 15px #dbdbdb;
+}
