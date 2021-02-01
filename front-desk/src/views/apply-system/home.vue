@@ -147,6 +147,13 @@
         <post-item></post-item>
       </el-col>
     </el-row>
+    <el-row class="more-btn">
+      <el-col :span="8"><div class="grid-content"></div></el-col>
+      <el-col :span="8">
+          <el-button type="warning" class="wide-button">查看更多</el-button>
+      </el-col>
+      <el-col :span="8"><div class="grid-content"></div></el-col>
+    </el-row>
     <el-row class="title">
       <el-col :span="8"><div class="grid-content"></div></el-col>
       <el-col :span="8">
@@ -160,16 +167,35 @@
       <el-col :span="3"><div class="grid-content"></div></el-col>
       <el-col :span="17">
         <el-row class="companies">
-          <el-col :span="8"><div class="company-content"></div></el-col>
-          <el-col :span="8"><div class="company-content"></div></el-col>
-          <el-col :span="8"><div class="company-content"></div></el-col>
+          <el-col :span="8">
+            <company-item></company-item>
+          </el-col>
+          <el-col :span="8">
+            <company-item></company-item>
+          </el-col>
+          <el-col :span="8">
+            <company-item></company-item>
+          </el-col>
         </el-row>
         <el-row class="companies">
-          <el-col :span="8"><div class="company-content"></div></el-col>
-          <el-col :span="8"><div class="company-content"></div></el-col>
-          <el-col :span="8"><div class="company-content"></div></el-col>
+          <el-col :span="8">
+            <company-item></company-item>
+          </el-col>
+          <el-col :span="8">
+            <company-item></company-item>
+          </el-col>
+          <el-col :span="8">
+            <company-item></company-item>
+          </el-col>
         </el-row>
       </el-col>
+    </el-row>
+    <el-row class="more-btn">
+      <el-col :span="8"><div class="grid-content"></div></el-col>
+      <el-col :span="8">
+        <el-button type="warning" class="wide-button">查看更多</el-button>
+      </el-col>
+      <el-col :span="8"><div class="grid-content"></div></el-col>
     </el-row>
   </div>
 </template>
@@ -177,9 +203,11 @@
 <script>
 // 导入PostItem组件
 import PostItem from "../../components/post/PostItem";
+// 导入CompanyItem组件
+import CompanyItem from "../../components/company/CompanyItem";
 export default {
   name: "home",
-  components: {PostItem},
+  components: {CompanyItem, PostItem},
   data() {
     return {
       search: ''

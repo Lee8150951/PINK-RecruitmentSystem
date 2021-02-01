@@ -59,3 +59,12 @@
   background-color: #fff;
   box-shadow: -5px 5px 15px #dbdbdb;
 }
+.more-btn {
+  margin-top: 25px;
+  text-align: center;
+}
+.wide-button {
+  padding: 12px 100px;
+  border-radius: 0;
+  box-shadow: -5px 5px 15px #c7c7c7;
+}
