@@ -3,29 +3,29 @@
     <el-row>
       <el-col :span="12">
         <div class="header-content">
-          <li class="job-name">Java开发工程师</li>
+          <li class="job-name"><slot name = "job-name"></slot></li>
           <li class="job-info">
-            <span class="salary">20K-30K</span>
-            <span class="experience">5-10年</span>
-            <span class="degree">硕士</span>
-            <span class="address">上海黄浦区</span>
+            <span class="salary"><slot name = "job-salary"></slot></span>
+            <span class="experience"><slot name = "job-experience"></slot></span>
+            <span class="degree"><slot name = "job-degree"></slot></span>
+            <span class="address"><slot name = "job-address"></slot></span>
           </li>
         </div>
       </el-col>
       <el-col :span="8">
         <div class="header-content">
-          <li class="company-name">腾讯</li>
+          <li class="company-name"><slot name = "company-name"></slot></li>
           <li class="company-info">
-            <span class="type">互联网</span>
-            <span class="state">已上市</span>
-            <span class="employees">10000人</span>
+            <span class="type"><slot name = "company-type"></slot></span>
+            <span class="state"><slot name = "company-state"></slot></span>
+            <span class="employees"><slot name = "company-employees"></slot></span>
           </li>
         </div>
       </el-col>
       <el-col :span="4">
         <div class="header-content">
           <div class="company-logo">
-            <img src="../../assets/img/company/huawei.jpg" alt="">
+            <slot name = "company-logo"></slot>
           </div>
         </div>
       </el-col>
@@ -33,14 +33,14 @@
     <el-row class="bottom-content">
       <el-col :span="12">
         <div class="footer-content">
-          <el-tag v-for="item in items" :key="item" type="info" size="mini">
-            {{item}}
-          </el-tag>
+          <slot name="items"></slot>
         </div>
       </el-col>
       <el-col :span="12">
         <div class="footer-content">
-          <span class="welfare">员工旅游，带薪年假，定期体检，通讯补贴，交通补助...</span>
+          <span class="welfare">
+            <slot name="welfare"></slot>
+          </span>
         </div>
       </el-col>
     </el-row>
@@ -49,12 +49,7 @@
 
 <script>
   export default {
-    name: "PostItem",
-    data() {
-      return {
-        items: ['标签一', '标签二', '标签三', '标签四', '标签五']
-      }
-    }
+    name: "PostItem"
   }
 </script>
 

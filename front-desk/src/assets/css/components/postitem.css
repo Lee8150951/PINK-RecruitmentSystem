@@ -24,13 +24,6 @@
   line-height: 40px;
   margin-right: 30px;
 }
-.company-logo img{
-  height: 60px;
-  float: right;
-  margin-right: 30px;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-}
 .job-name {
   color: #E6A23C;
   font-weight: bold;
