@@ -49,18 +49,14 @@
         <div class="grid-content">
           <div class="post-li">
             <el-row>
-              <company-item-box></company-item-box>
-              <company-item-box></company-item-box>
-              <company-item-box></company-item-box>
-              <company-item-box></company-item-box>
-              <company-item-box></company-item-box>
-              <company-item-box></company-item-box>
-              <company-item-box></company-item-box>
-              <company-item-box></company-item-box>
-              <company-item-box></company-item-box>
-              <company-item-box></company-item-box>
-              <company-item-box></company-item-box>
-              <company-item-box></company-item-box>
+              <company-item-box v-for="company in companies" :key="company.index">
+                <img :src="company.logo" alt="" class="c-logo" slot="c-logo">
+                <div slot="c-name">{{company.name}}</div>
+                <span slot="c-state">{{company.state}}</span>
+                <span slot="c-type">{{company.type}}</span>
+                <span slot="c-num">{{company.num}}</span>
+                <span slot="c-salary">{{company.salary}}</span>
+              </company-item-box>
             </el-row>
           </div>
           <div class="post-pagination">
@@ -96,6 +92,17 @@ export default {
       scales: [
         '不限', '0-20人', '20-99人', '100-499人',
         '500-999人', '1000-9999人', '10000人以上'
+      ],
+      companies: [
+        {
+          index: 1,
+          logo: require('../../assets/img/company/huawei.jpg'),
+          name: '华为技术有限公司',
+          state: '已上市',
+          type: '通讯',
+          num: '5632',
+          salary: '10-15K'
+        }
       ]
     }
   }

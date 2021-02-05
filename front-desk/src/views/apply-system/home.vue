@@ -177,12 +177,13 @@
       <el-col :span="3"><div class="grid-content"></div></el-col>
       <el-col :span="17">
         <el-row class="companies">
-          <company-item></company-item>
-          <company-item></company-item>
-          <company-item></company-item>
-          <company-item></company-item>
-          <company-item></company-item>
-          <company-item></company-item>
+          <company-item v-for="company in companies" :key="company.index">
+            <img :src="company.logo" alt="" slot="c-logo" class="c-logo-img">
+            <div slot="c-name">{{company.name}}</div>
+            <span slot="c-state">{{company.state}}</span>
+            <span slot="c-type">{{company.type}}</span>
+            <span slot="c-num">{{company.num}}</span>
+          </company-item>
         </el-row>
       </el-col>
     </el-row>
@@ -209,6 +210,7 @@ export default {
       search: '',
       posts: [
         {
+          index: 1,
           name: 'Java开发工程师',
           salary: '20K-30K',
           experience: '5-10年',
@@ -221,63 +223,17 @@ export default {
           logo: require('../../assets/img/company/huawei.jpg'),
           items: ['标签一', '标签二', '标签三', '标签四', '标签五'],
           welfare: '员工旅游，带薪年假，定期体检，通讯补贴，交通补助...'
-        },
+        }
+      ],
+      companies: [
         {
-          name: 'Java开发工程师',
-          salary: '20K-30K',
-          experience: '5-10年',
-          degree: '硕士',
-          address: '上海黄浦区',
-          company_name: '腾讯',
-          company_type: '互联网',
-          company_state: '已上市',
-          company_employees: '10000人',
-          logo: require('../../assets/img/company/huawei.jpg'),
-          items: ['标签一', '标签二', '标签三', '标签四', '标签五'],
-          welfare: '员工旅游，带薪年假，定期体检，通讯补贴，交通补助...'
-        },
-        {
-          name: 'Java开发工程师',
-          salary: '20K-30K',
-          experience: '5-10年',
-          degree: '硕士',
-          address: '上海黄浦区',
-          company_name: '腾讯',
-          company_type: '互联网',
-          company_state: '已上市',
-          company_employees: '10000人',
-          logo: require('../../assets/img/company/huawei.jpg'),
-          items: ['标签一', '标签二', '标签三', '标签四', '标签五'],
-          welfare: '员工旅游，带薪年假，定期体检，通讯补贴，交通补助...'
-        },
-        {
-          name: 'Java开发工程师',
-          salary: '20K-30K',
-          experience: '5-10年',
-          degree: '硕士',
-          address: '上海黄浦区',
-          company_name: '腾讯',
-          company_type: '互联网',
-          company_state: '已上市',
-          company_employees: '10000人',
-          logo: require('../../assets/img/company/huawei.jpg'),
-          items: ['标签一', '标签二', '标签三', '标签四', '标签五'],
-          welfare: '员工旅游，带薪年假，定期体检，通讯补贴，交通补助...'
-        },
-        {
-          name: 'Java开发工程师',
-          salary: '20K-30K',
-          experience: '5-10年',
-          degree: '硕士',
-          address: '上海黄浦区',
-          company_name: '腾讯',
-          company_type: '互联网',
-          company_state: '已上市',
-          company_employees: '10000人',
-          logo: require('../../assets/img/company/huawei.jpg'),
-          items: ['标签一', '标签二', '标签三', '标签四', '标签五'],
-          welfare: '员工旅游，带薪年假，定期体检，通讯补贴，交通补助...'
-        },
+          index: 1,
+          logo: require('../../assets/img/company/alibaba.jpg'),
+          name: '腾讯',
+          state: '已上市',
+          type: '互联网',
+          num: 3412
+        }
       ]
     }
   },
@@ -289,13 +245,4 @@ export default {
 
 <style scoped>
 @import "../../assets/css/apply-system/home.css";
-.bg-purple-dark {
-  background: #99a9bf;
-}
-.bg-purple {
-  background: #d3dce6;
-}
-.bg-purple-light {
-  background: #e5e9f2;
-}
 </style>

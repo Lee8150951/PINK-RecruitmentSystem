@@ -67,3 +67,10 @@
   color: #E6A23C;
   border-bottom: 2px solid #f6f6f8;
 }
+.company-logo-img {
+  height: 60px;
+  float: right;
+  margin-right: 30px;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+}

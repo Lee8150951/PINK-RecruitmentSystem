@@ -14,12 +14,6 @@
   height: 48px;
   line-height: 35px;
 }
-.company-box-content img {
-  height: 55px;
-  border-radius: 10px;
-  border: 1px solid #eaeaea;
-  margin-top: 5px;
-}
 .company-title {
   font-size: 15px;
   text-align: right;
