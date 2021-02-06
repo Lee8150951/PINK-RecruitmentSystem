@@ -1,0 +1,63 @@
+.detail-header {
+  height: 150px;
+  background-color: #33cbcc;
+  padding: 20px 11%;
+}
+.header-content {
+  height: 150px;
+}
+.company-logo {
+  border-radius: 10px;
+  float: left;
+}
+.c-info {
+  padding-left: 120px;
+  padding-top: 15px;
+}
+.c-info h2 {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: normal;
+}
+.c-info p {
+  color: #efefef;
+  font-size: 13px;
+}
+.p-info-top {
+  color: white;
+  text-align: right;
+}
+.p-info-top h2 {
+  font-size: 30px;
+  font-weight: normal;
+}
+.p-info-top p {
+  font-size: 14px;
+}
+.p-resume {
+  text-align: right;
+  margin-top: 15px;
+}
+.resume-btn {
+  padding: 8px 13%;
+  border-radius: 0;
+}
+.c-main {
+  padding: 50px 120px;
+  background-color: #fff;
+}
+
+
+.bg-purple-dark {
+  background: #99a9bf;
+}
+.bg-purple {
+  background: #d3dce6;
+}
+.bg-purple-light {
+  background: #004eff;
+}
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+}

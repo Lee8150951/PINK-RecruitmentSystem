@@ -12,6 +12,8 @@ const ApplyApplication = () => import("../views/apply-system/application")
 const ApplyCompany = () => import("../views/apply-system/company")
 const ApplyForum = () => import("../views/apply-system/forum")
 const ApplyNews = () => import("../views/apply-system/news")
+const ApplyCompanyDetail = () => import("../views/apply-system/details/company-detail")
+const ApplyPositionDetail = () => import("../views/apply-system/details/position-detail")
 
 Vue.use(Router)
 
@@ -56,6 +58,14 @@ const routes = [
       {
         path: "apply_application",
         component: ApplyApplication
+      },
+      {
+        path: "company_detail",
+        component: ApplyCompanyDetail
+      },
+      {
+        path: "position_detail",
+        component: ApplyPositionDetail
       }
     ]
   }

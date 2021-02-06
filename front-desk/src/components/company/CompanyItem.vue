@@ -1,28 +1,46 @@
 <template>
-  <el-col :span="8">
-    <div class="company-content">
-      <li class="c-logo">
-        <slot name="c-logo"></slot>
-      </li>
-      <li class="c-name">
-        <slot name="c-name"></slot>
-      </li>
-      <li class="c-info">
-        <span class="c-info-left"><slot name="c-state"></slot></span>
-        <span class="c-info-right"><slot name="c-type"></slot></span>
-      </li>
-      <li class="c-post">
-        <el-button plain class="c-post-btn">
-          <slot name="c-num"></slot>个招聘岗位
-        </el-button>
-      </li>
-    </div>
-  </el-col>
+  <div @click="companyClick">
+    <el-col :span="8">
+      <div class="company-content">
+        <li class="c-logo">
+          <img :src="company.logo" alt="" class="c-logo-img">
+        </li>
+        <li class="c-name">{{company.name}}</li>
+        <li class="c-info">
+          <span class="c-info-left">{{company.state}}</span>
+          <span class="c-info-right">{{company.type}}</span>
+        </li>
+        <li class="c-post">
+          <el-button plain class="c-post-btn">
+            {{company.num}}个招聘岗位
+          </el-button>
+        </li>
+      </div>
+    </el-col>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "CompanyItem"
+  name: "CompanyItem",
+  props: {
+    company: {
+      type: Object
+    }
+  },
+  methods: {
+    companyClick() {
+      // 携带索引跳转
+      this.$router.push({
+        path: "/index/company_detail",
+        query: {
+          index: this.company.index,
+          name: this.company.name,
+          type: this.company.type
+        }
+      })
+    }
+  }
 }
 </script>
 

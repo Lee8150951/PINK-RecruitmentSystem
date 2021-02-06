@@ -141,20 +141,7 @@
     <el-row class="post">
       <el-col :span="3"><div class="grid-content"></div></el-col>
       <el-col :span="17">
-        <post-item v-for="post in posts" :key="post.index">
-          <div slot="job-name">{{post.name}}</div>
-          <span slot="job-salary">{{post.salary}}</span>
-          <span slot="job-experience">{{post.experience}}</span>
-          <span slot="job-degree">{{post.degree}}</span>
-          <span slot="job-address">{{post.address}}</span>
-          <div slot="company-name">{{post.company_name}}</div>
-          <span slot="company-type">{{post.company_type}}</span>
-          <span slot="company-state">{{post.company_state}}</span>
-          <span slot="company-employees">{{post.company_employees}}</span>
-          <img :src="post.logo" alt="" slot="company-logo" class="company-logo-img">
-          <el-tag v-for="item in post.items" :key="item" type="info" size="mini" slot="items" style="margin-left: 12px">{{item}}</el-tag>
-          <span slot="welfare">{{post.welfare}}</span>
-        </post-item>
+        <post-item v-for="post in posts" :key="post.index" :post="post"></post-item>
       </el-col>
     </el-row>
     <el-row class="more-btn">
@@ -177,8 +164,7 @@
       <el-col :span="3"><div class="grid-content"></div></el-col>
       <el-col :span="17">
         <el-row class="companies">
-          <company-item v-for="company in companies" :key="company.index">
-            <img :src="company.logo" alt="" slot="c-logo" class="c-logo-img">
+          <company-item v-for="company in companies" :key="company.index" :company="company">
             <div slot="c-name">{{company.name}}</div>
             <span slot="c-state">{{company.state}}</span>
             <span slot="c-type">{{company.type}}</span>
@@ -212,14 +198,14 @@ export default {
         {
           index: 1,
           name: 'Java开发工程师',
-          salary: '20K-30K',
+          salary: '10K-20K',
           experience: '5-10年',
           degree: '硕士',
-          address: '上海黄浦区',
-          company_name: '腾讯',
-          company_type: '互联网',
+          address: '上海浦东区',
+          company_name: '华为',
+          company_type: '通讯',
           company_state: '已上市',
-          company_employees: '10000人',
+          company_employees: '1200人',
           logo: require('../../assets/img/company/huawei.jpg'),
           items: ['标签一', '标签二', '标签三', '标签四', '标签五'],
           welfare: '员工旅游，带薪年假，定期体检，通讯补贴，交通补助...'
@@ -229,16 +215,21 @@ export default {
         {
           index: 1,
           logo: require('../../assets/img/company/alibaba.jpg'),
-          name: '腾讯',
+          name: '阿里巴巴',
+          state: '已上市',
+          type: '金融',
+          num: 3412
+        },
+        {
+          index: 2,
+          logo: require('../../assets/img/company/bytedance.jpg'),
+          name: '字节跳动',
           state: '已上市',
           type: '互联网',
-          num: 3412
+          num: 1873
         }
       ]
     }
-  },
-  methods: {
-
   }
 }
 </script>

@@ -68,15 +68,3 @@
   border-radius: 0;
   box-shadow: -5px 5px 15px #c7c7c7;
 }
-.company-logo-img {
-  height: 60px;
-  float: right;
-  margin-right: 30px;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-}
-.c-logo-img {
-  height: 70px;
-  border-radius: 10px;
-  border: 1px solid #eaeaea;
-}

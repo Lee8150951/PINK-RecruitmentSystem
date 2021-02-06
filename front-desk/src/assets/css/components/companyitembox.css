@@ -5,6 +5,11 @@
   background-color: #ffffff;
   box-shadow: 0 3px 15px #dedede;
   padding: 10px 20px;
+  cursor: pointer;
+}
+.box-content:hover {
+  box-shadow: -5px 5px 15px #adadad;
+  transition: 0.5s;
 }
 .box-head {
   height: 80px;
@@ -30,4 +35,10 @@
 }
 .position-info {
   color: #E6A23C;
+}
+.c-logo {
+  height: 55px;
+  border-radius: 10px;
+  border: 1px solid #eaeaea;
+  margin-top: 5px;
 }

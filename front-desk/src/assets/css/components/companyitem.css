@@ -6,6 +6,11 @@
   text-align: center;
   padding-top: 30px;
   margin-top: 12px;
+  cursor: pointer;
+}
+.company-content:hover {
+  box-shadow: -5px 5px 15px #adadad;
+  transition: 0.5s;
 }
 .c-name {
   margin-top: 10px;
@@ -29,4 +34,9 @@
   padding: 10px 20%;
   border-radius: 0;
   font-size: 13px;
+}
+.c-logo-img {
+  height: 70px;
+  border-radius: 10px;
+  border: 1px solid #eaeaea;
 }

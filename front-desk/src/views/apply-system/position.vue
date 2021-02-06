@@ -102,20 +102,7 @@
       <el-col :span="13">
         <div class="grid-content">
           <div class="post-li">
-            <post-item v-for="post in posts" :key="post.index">
-              <div slot="job-name">{{post.name}}</div>
-              <span slot="job-salary">{{post.salary}}</span>
-              <span slot="job-experience">{{post.experience}}</span>
-              <span slot="job-degree">{{post.degree}}</span>
-              <span slot="job-address">{{post.address}}</span>
-              <div slot="company-name">{{post.company_name}}</div>
-              <span slot="company-type">{{post.company_type}}</span>
-              <span slot="company-state">{{post.company_state}}</span>
-              <span slot="company-employees">{{post.company_employees}}</span>
-              <img :src="post.logo" alt="" slot="company-logo" class="company-logo-img">
-              <el-tag v-for="item in post.items" :key="item" type="info" size="mini" slot="items" style="margin-left: 12px">{{item}}</el-tag>
-              <span slot="welfare">{{post.welfare}}</span>
-            </post-item>
+            <post-item v-for="post in posts" :key="post.index" :post="post"></post-item>
           </div>
           <div class="post-pagination">
             <el-pagination background :page-size="20" :pager-count="11" layout="prev, pager, next" :total="1000"></el-pagination>

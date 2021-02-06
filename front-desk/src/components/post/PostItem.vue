@@ -1,31 +1,31 @@
 <template>
-  <div class="post-item">
+  <div class="post-item" @click="postClick">
     <el-row>
       <el-col :span="12">
         <div class="header-content">
-          <li class="job-name"><slot name="job-name"></slot></li>
+          <li class="job-name" id="name">{{post.name}}</li>
           <li class="job-info">
-            <span class="salary"><slot name="job-salary"></slot></span>
-            <span class="experience"><slot name="job-experience"></slot></span>
-            <span class="degree"><slot name="job-degree"></slot></span>
-            <span class="address"><slot name="job-address"></slot></span>
+            <span class="salary">{{post.salary}}</span>
+            <span class="experience">{{post.experience}}</span>
+            <span class="degree">{{post.degree}}</span>
+            <span class="address">{{post.address}}</span>
           </li>
         </div>
       </el-col>
       <el-col :span="8">
         <div class="header-content">
-          <li class="company-name"><slot name="company-name"></slot></li>
+          <li class="company-name">{{post.company_name}}</li>
           <li class="company-info">
-            <span class="type"><slot name="company-type"></slot></span>
-            <span class="state"><slot name="company-state"></slot></span>
-            <span class="employees"><slot name="company-employees"></slot></span>
+            <span class="type">{{post.company_type}}</span>
+            <span class="state">{{post.company_state}}</span>
+            <span class="employees">{{post.company_employees}}</span>
           </li>
         </div>
       </el-col>
       <el-col :span="4">
         <div class="header-content">
           <div class="company-logo">
-            <slot name="company-logo"></slot>
+            <img :src="post.logo" alt="logo" class="company-logo-img">
           </div>
         </div>
       </el-col>
@@ -33,13 +33,15 @@
     <el-row class="bottom-content">
       <el-col :span="12">
         <div class="footer-content">
-          <slot name="items"></slot>
+          <el-tag v-for="item in post.items" :key="item" type="info" size="mini" style="margin-left: 12px">
+            {{item}}
+          </el-tag>
         </div>
       </el-col>
       <el-col :span="12">
         <div class="footer-content">
           <span class="welfare">
-            <slot name="welfare"></slot>
+            {{post.welfare}}
           </span>
         </div>
       </el-col>
@@ -49,7 +51,25 @@
 
 <script>
   export default {
-    name: "PostItem"
+    name: "PostItem",
+    props: {
+      post: {
+        type: Object
+      }
+    },
+    methods: {
+      postClick() {
+        // 携带索引跳转
+        this.$router.push({
+          path: '/index/position_detail',
+          query: {
+            index: this.post.index,
+            name: this.post.name,
+            company_name: this.post.company_name
+          }
+        })
+      }
+    }
   }
 </script>
 
