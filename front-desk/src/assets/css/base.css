@@ -39,3 +39,7 @@ img {
 .bg-grey {
   background-color: #909399;
 }
+/*统一占位*/
+.occupied-content {
+  height: 100px;
+}

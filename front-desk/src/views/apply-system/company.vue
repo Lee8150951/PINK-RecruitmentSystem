@@ -58,6 +58,9 @@
         </div>
       </el-col>
     </el-row>
+    <el-row>
+      <el-col :span="24"><div class="occupied-content"></div></el-col>
+    </el-row>
   </div>
 </template>
 
