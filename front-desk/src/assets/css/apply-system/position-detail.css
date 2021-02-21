@@ -69,7 +69,7 @@
 }
 .left-main-content {
   border-right: 1px solid #eaeaea;
-  height: 100px;
+  padding-right: 30px;
 }
 .p-main {
   padding: 30px 150px;
@@ -98,39 +98,70 @@
   text-align: center;
   line-height: 40px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.bg-purple-dark {
-  background: #99a9bf;
+.btn-content {
+  float: right;
 }
-.bg-purple {
-  background: #d3dce6;
+.intro-content {
+  margin-top: 25px;
 }
-.bg-purple-light {
-  background: #e5e9f2;
+.p-intro h3{
+  border-left: 5px solid #E6A23C;
+  padding-left: 8px;
+  font-size: 16px;
+  color: #424a64;
+  margin-top: 20px;
 }
-.grid-content {
-  border-radius: 4px;
-  min-height: 36px;
+.p-intro-main {
+  font-weight: lighter;
+  line-height: 40px;
+  margin-top: 20px;
+  font-size: 15px;
+}
+.p-more {
+  float: right;
+}
+.business-content {
+  margin-top: 50px;
+}
+.p-business h3 {
+  border-left: 5px solid #E6A23C;
+  padding-left: 8px;
+  font-size: 16px;
+  color: #424a64;
+  margin-top: 20px;
+}
+.collapse {
+  margin-top: 24px;
+}
+.right-main-content {
+  padding-left: 30px;
+}
+.r-company li {
+  margin-top: 20px;
+}
+.r-company-logo {
+  height: 65px;
+  border-radius: 10px;
+  border: 1px solid #d0d0d0;
+}
+.r-company-name {
+  font-weight: lighter;
+  margin-left: 10px;
+  font-size: 15px;
+}
+.r-company-info {
+  font-weight: lighter;
+  font-size: 15px;
+}
+.r-company-info span i {
+  color: #afafaf;
+}
+.r-company-intro {
+  margin-left: 20px;
+}
+.environ-img {
+  height: 280px;
+}
+.environ-block {
+  margin-top: 20px;
 }
