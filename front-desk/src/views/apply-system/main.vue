@@ -12,9 +12,8 @@
           <template slot="title">
             <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
           </template>
-          <el-menu-item index="7-1">个人信息</el-menu-item>
-          <el-menu-item index="7-2">账号设置</el-menu-item>
-          <el-menu-item index="7-3">切换账号</el-menu-item>
+          <nav-pull-item path="/index/apply_profile">个人信息</nav-pull-item>
+          <nav-pull-item path="">切换账号</nav-pull-item>
         </el-submenu>
       </nav-menu>
     </header>
@@ -35,13 +34,15 @@
 import NavMenu from "../../components/navmenu/NavMenu";
 // NavMenuItem组件
 import NavMenuItem from "../../components/navmenu/NavMenuItem";
+// NavPullItem组件
+import NavPullItem from "../../components/navmenu/NavPullItem";
 // NavBar组件
 import NavBar from "../../components/navbar/NavBar";
 // Footer组件
 import FooterBar from "../../components/footer/Footer";
 export default {
   name: "main",
-  components: {NavMenuItem, FooterBar, NavBar, NavMenu},
+  components: {NavPullItem, NavMenuItem, FooterBar, NavBar, NavMenu},
   data() {
     return {
       activeIndex: '1',
