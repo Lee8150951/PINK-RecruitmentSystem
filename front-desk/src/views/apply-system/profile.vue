@@ -78,15 +78,7 @@
           </div>
           <el-drawer title="开通会员" :visible.sync="drawer">
           </el-drawer>
-          <div class="annex-panel">
-            <ul>
-              <li class="annex-title">附件管理</li>
-              <li class="annex-buttons">
-                <el-button type="warning" class="annex-btn">上传简历</el-button>
-                <el-button type="warning" plain class="annex-btn">在线简历</el-button>
-              </li>
-            </ul>
-          </div>
+          <annex-panel style="margin-top: 20px"></annex-panel>
           <div class="history-panel">
             <el-button plain class="history-btn">
               <li class="big-num">0</li>
@@ -105,9 +97,10 @@
 
 <script>
 import PostItem from "../../components/post/PostItem";
+import AnnexPanel from "../../components/profile/AnnexPanel";
 export default {
   name: "profile",
-  components: {PostItem},
+  components: {AnnexPanel, PostItem},
   data() {
     return {
       research: '',
