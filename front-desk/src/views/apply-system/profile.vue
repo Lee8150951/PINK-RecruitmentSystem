@@ -32,18 +32,19 @@
             <ul>
               <li>
                 <img src="../../assets/img/avatar/avatar02.png" alt="" class="personal-img">
+                <el-button type="text" class="personal-btn" @click="editInfo">编辑</el-button>
               </li>
               <li>
-                <span class="personal-name">王小明</span>
+                <span class="personal-name">{{user.name}}</span>
                 <el-button @click="drawer=true" size="mini" type="warning" icon="el-icon-medal-1" circle class="vip-btn"></el-button>
               </li>
               <li class="personal-intro">
-                <span class="span-left">22岁</span>
-                <span>23届应届生</span>
-                <span class="span-right">硕士</span>
+                <span class="span-left">{{user.age}}岁</span>
+                <span>{{user.c_school}}</span>
+                <span class="span-right">{{user.c_qualification}}</span>
               </li>
               <li>
-                <el-button type="warning" plain class="personal-type">在校生-暂不考虑</el-button>
+                <el-button type="warning" plain class="personal-type">{{user.c_excity}} - 暂不考虑</el-button>
               </li>
               <li>
                 <el-row>
@@ -80,14 +81,21 @@
           <div class="annex-panel">
             <ul>
               <li class="annex-title">附件管理</li>
-              <li>
-                <el-button type="warning">警告按钮</el-button>
+              <li class="annex-buttons">
+                <el-button type="warning" class="annex-btn">上传简历</el-button>
+                <el-button type="warning" plain class="annex-btn">在线简历</el-button>
               </li>
-              <li>
-                <el-button type="warning" plain>警告按钮</el-button>
-              </li>
-              <li></li>
             </ul>
+          </div>
+          <div class="history-panel">
+            <el-button plain class="history-btn">
+              <li class="big-num">0</li>
+              <li>对我感兴趣</li>
+            </el-button>
+            <el-button plain class="history-btn">
+              <li class="big-num">0</li>
+              <li>看过我</li>
+            </el-button>
           </div>
         </div>
       </el-col>
@@ -151,10 +159,27 @@ export default {
           items: ['标签一', '标签二', '标签三', '标签四', '标签五'],
           welfare: '员工旅游，带薪年假，定期体检，通讯补贴，交通补助...'
         }
-      ]
+      ],
+      user: {
+        c_id: "1",
+        c_qualification: '硕士',
+        c_excity: '深圳',
+        c_school: '华中科技大学',
+        name: '马小超',
+        age: 23
+      }
     }
   },
   methods: {
+    editInfo() {
+      this.$router.push({
+        path: '/index/apply_edit',
+        query: {
+          c_id: this.user.c_id,
+          name: this.user.name
+        }
+      })
+    }
   }
 }
 </script>

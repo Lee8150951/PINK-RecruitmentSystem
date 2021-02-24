@@ -50,6 +50,13 @@
 .personal-type {
   margin: 10px 0;
   padding: 8px 25%;
+  border-radius: 0;
+}
+.personal-btn {
+  position: absolute;
+  right: 20px;
+  color: #909090;
+  font-weight: lighter;
 }
 .personal-num {
   font-size: 14px;
@@ -72,12 +79,34 @@
 .annex-title {
   text-align: left;
 }
-
-
-
-
-
-
+.annex-btn {
+  margin: 6px 0;
+  padding: 8px 38%;
+  border-radius: 0;
+}
+.annex-buttons {
+  margin-top: 10px;
+}
+.history-panel {
+  margin-top: 20px;
+  background-color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+}
+.history-btn {
+  width: 40%;
+  text-align: center;
+  padding: 20px;
+  font-weight: lighter;
+  font-size: 12px;
+  border-radius: 0;
+}
+.history-btn li {
+  margin-top: 5px;
+}
+.big-num {
+  font-size: 16px;
+}
 
 
 

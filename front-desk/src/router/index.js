@@ -7,6 +7,7 @@ const Premise = () => import("../views/premise/main")
 const System = () => import("../views/apply-system/main")
 const ApplyMain = () => import("../views/apply-system/home")
 const ApplyProfile = () => import("../views/apply-system/profile")
+const ApplyEdit = () => import("../views/apply-system/edit")
 const ApplyPosition = () => import("../views/apply-system/position")
 const ApplyApplication = () => import("../views/apply-system/application")
 const ApplyCompany = () => import("../views/apply-system/company")
@@ -38,6 +39,10 @@ const routes = [
       {
         path: "apply_profile",
         component: ApplyProfile
+      },
+      {
+        path: "apply_edit",
+        component: ApplyEdit
       },
       {
         path: "apply_company",
