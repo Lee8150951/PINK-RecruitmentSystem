@@ -2,12 +2,12 @@
   <el-card shadow="hover" class="message-card edu-card">
     <ul class="edu">
       <li>
-        <span class="edu-name">麻省理工大学</span>
-        <span class="edu-time">2019.10-2020.06</span>
+        <span class="edu-name">{{edu.c_school}}</span>
+        <span class="edu-time">{{edu.c_schooling}}</span>
       </li>
       <li>
-        <span class="edu-depart">电子信息</span>
-        <span class="edu-work">博士</span>
+        <span class="edu-depart">{{edu.c_major}}</span>
+        <span class="edu-work">{{edu.c_qualification}}</span>
       </li>
     </ul>
   </el-card>
@@ -15,7 +15,10 @@
 
 <script>
 export default {
-  name: "EducatePanel"
+  name: "EducatePanel",
+  props: {
+    edu: Object
+  }
 }
 </script>
 
