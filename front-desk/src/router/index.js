@@ -3,6 +3,10 @@ import Router from 'vue-router'
 
 // 登录注册模块
 const Premise = () => import("../views/premise/main")
+const ApplyLogin = () => import("../views/premise/login/apply_login")
+const ApplyRegister = () => import("../views/premise/register/apply_register")
+const HireLogin = () => import("../views/premise/login/hire_login")
+const HireRegister = () => import("../views/premise/register/hire_register")
 // 应聘系统主体模块
 const System = () => import("../views/apply-system/main")
 const ApplyMain = () => import("../views/apply-system/home")
@@ -21,11 +25,30 @@ Vue.use(Router)
 const routes = [
   {
     path: '',
-    redirect: '/premise'
+    redirect: '/premise/apply_login'
   },
   {
     path: '/premise',
-    component: Premise
+    component: Premise,
+    // 配置子路由
+    children: [
+      {
+        path: 'apply_login',
+        component: ApplyLogin
+      },
+      {
+        path: 'hire_login',
+        component: HireLogin
+      },
+      {
+        path: 'apply_register',
+        component: ApplyRegister
+      },
+      {
+        path: 'hire_register',
+        component: HireRegister
+      }
+    ]
   },
   {
     path: '/index',

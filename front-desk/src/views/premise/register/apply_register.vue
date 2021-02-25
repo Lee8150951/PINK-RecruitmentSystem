@@ -1,10 +1,10 @@
 <template>
-  <router-view></router-view>
+  <h2>apply_register</h2>
 </template>
 
 <script>
 export default {
-  name: "main"
+  name: "apply_register"
 }
 </script>
 

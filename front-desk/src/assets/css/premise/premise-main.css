@@ -1,0 +1,40 @@
+.back-body {
+  height: 100%;
+  padding: 12% 25%;
+  background-color: #f5f5f5;
+}
+.main {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: -5px 5px 15px #e5e5e5;
+}
+.left-content {
+  padding: 25% 20px;
+  border-right: 1px solid #eeeeee;
+}
+.left-bg {
+  width: 100%;
+}
+.right-content {
+  padding: 25px 80px;
+}
+.title {
+  text-align: center;
+}
+.left-title {
+  font-weight: 900;
+  font-size: 25px;
+  color: #4c4c64;
+  margin-right: 5px;
+}
+.right-title {
+  font-weight: 900;
+  font-size: 25px;
+  color: #F56C6C;
+}
+.form-item {
+  margin-top: 35px;
+}
+.sub-btn {
+  width: 100%;
+}

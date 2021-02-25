@@ -1,10 +1,10 @@
 <template>
-  <router-view></router-view>
+  <h2>hire_login</h2>
 </template>
 
 <script>
 export default {
-  name: "main"
+  name: "hire_login"
 }
 </script>
 
