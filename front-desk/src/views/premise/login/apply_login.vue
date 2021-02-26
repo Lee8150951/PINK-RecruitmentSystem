@@ -10,7 +10,7 @@
         <div class="right-content">
           <div class="title">
             <span class="left-title">Log in</span>
-            <span class="right-title">'PINK'</span>
+            <span class="right-title pink">'PINK'</span>
           </div>
           <div class="form">
             <el-form ref="form" :model="form" label-width="80px">
@@ -24,6 +24,14 @@
                 <el-button type="danger" @click="onSubmit" class="sub-btn">登录</el-button>
               </div>
             </el-form>
+          </div>
+          <div class="another-log">
+            <span class="left-span">
+              <el-button type="text" class="another-btn" @click="turnRegister">点击注册</el-button>
+            </span>
+            <span class="right-span">
+              <el-button type="text" class="another-btn" @click="turnAnother">切换身份登录...</el-button>
+            </span>
           </div>
         </div>
       </el-col>
@@ -50,6 +58,16 @@
             phone: this.form.phone,
             password: this.form.password
           }
+        })
+      },
+      turnAnother() {
+        this.$router.push({
+          path: '/premise/hire_login'
+        })
+      },
+      turnRegister() {
+        this.$router.push({
+          path: '/premise/apply_register'
         })
       }
     }

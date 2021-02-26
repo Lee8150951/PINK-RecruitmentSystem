@@ -10,13 +10,16 @@
 }
 .left-content {
   padding: 25% 20px;
-  border-right: 1px solid #eeeeee;
+}
+.left-content-register {
+  padding: 45% 20px;
 }
 .left-bg {
   width: 100%;
 }
 .right-content {
   padding: 25px 80px;
+  border-left: 1px solid #eeeeee;
 }
 .title {
   text-align: center;
@@ -30,11 +33,33 @@
 .right-title {
   font-weight: 900;
   font-size: 25px;
-  color: #F56C6C;
 }
 .form-item {
   margin-top: 35px;
 }
 .sub-btn {
   width: 100%;
+}
+.another-log {
+  margin-top: 10px;
+  text-align: right;
+}
+.another-btn {
+  color: #c4c4c4;
+  font-size: 12px;
+}
+.left-span {
+  float: left;
+}
+.pink {
+  color: #F56C6C;
+}
+.orange {
+  color: #E6A23C;
+}
+.green {
+  color: #67C23A;
+}
+.blue {
+  color: #409EFF;
 }
