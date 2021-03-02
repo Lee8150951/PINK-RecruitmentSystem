@@ -13,6 +13,7 @@
     "element-china-area-data": "^5.0.2",
     "element-ui": "^2.15.0",
     "vue": "^2.5.2",
+    "vue-pdf": "^4.2.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.6.0"
   },

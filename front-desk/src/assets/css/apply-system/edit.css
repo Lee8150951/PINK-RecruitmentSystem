@@ -108,3 +108,9 @@
   float: right;
   color: #E6A23C;
 }
+.el-card {
+  cursor: pointer;
+}
+.cascader-col {
+  width: 100%;
+}
