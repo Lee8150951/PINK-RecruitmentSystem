@@ -96,8 +96,8 @@
 </template>
 
 <script>
-import PostItem from "../../components/post/PostItem";
-import AnnexPanel from "../../components/profile/AnnexPanel";
+import PostItem from "../../components/apply-system/post/PostItem";
+import AnnexPanel from "../../components/apply-system/profile/AnnexPanel";
 export default {
   name: "profile",
   components: {AnnexPanel, PostItem},

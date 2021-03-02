@@ -31,15 +31,15 @@
 
 <script>
 // NavMenu组件
-import NavMenu from "../../components/navmenu/NavMenu";
+import NavMenu from "../../components/apply-system/navmenu/NavMenu";
 // NavMenuItem组件
-import NavMenuItem from "../../components/navmenu/NavMenuItem";
+import NavMenuItem from "../../components/apply-system/navmenu/NavMenuItem";
 // NavPullItem组件
-import NavPullItem from "../../components/navmenu/NavPullItem";
+import NavPullItem from "../../components/apply-system/navmenu/NavPullItem";
 // NavBar组件
-import NavBar from "../../components/navbar/NavBar";
+import NavBar from "../../components/apply-system/navbar/NavBar";
 // Footer组件
-import FooterBar from "../../components/footer/Footer";
+import FooterBar from "../../components/apply-system/footer/Footer";
 export default {
   name: "main",
   components: {NavPullItem, NavMenuItem, FooterBar, NavBar, NavMenu},

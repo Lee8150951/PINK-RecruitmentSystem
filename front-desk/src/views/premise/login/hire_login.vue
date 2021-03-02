@@ -53,7 +53,7 @@ export default {
   methods: {
     onSubmit() {
       this.$router.push({
-        path: '/index/hire_home',
+        path: '/hire/hire_home',
         query: {
           phone: this.form.phone,
           password: this.form.password

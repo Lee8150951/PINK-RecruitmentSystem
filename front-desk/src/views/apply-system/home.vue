@@ -188,9 +188,9 @@
 
 <script>
 // 导入PostItem组件
-import PostItem from "../../components/post/PostItem";
+import PostItem from "../../components/apply-system/post/PostItem";
 // 导入CompanyItem组件
-import CompanyItem from "../../components/company/CompanyItem";
+import CompanyItem from "../../components/apply-system/company/CompanyItem";
 export default {
   name: "home",
   components: {CompanyItem, PostItem},

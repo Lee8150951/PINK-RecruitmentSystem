@@ -136,9 +136,9 @@
 
 <script>
 // 导入PostItemSimple组件
-import PostItemSimple from "../../../components/post/PostItemSimple";
+import PostItemSimple from "../../../components/apply-system/post/PostItemSimple";
 // 导入HrItem组件
-import HrItem from "../../../components/hr/HrItem";
+import HrItem from "../../../components/apply-system/hr/HrItem";
 export default {
   name: "company-detail",
   components: {HrItem, PostItemSimple},

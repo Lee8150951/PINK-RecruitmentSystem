@@ -210,9 +210,9 @@
 
 <script>
 // 导入CommunicateLi组件
-import CommunicateLi from "../../../components/communicate/CommunicateLi";
+import CommunicateLi from "../../../components/apply-system/communicate/CommunicateLi";
 // 导入PostApp组件
-import PostApp from "../../../components/post/PostApp";
+import PostApp from "../../../components/apply-system/post/PostApp";
 export default {
   name: "position-detail",
   components: {PostApp, CommunicateLi},

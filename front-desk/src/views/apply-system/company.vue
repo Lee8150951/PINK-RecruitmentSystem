@@ -66,9 +66,9 @@
 
 <script>
 // 导入CompanyItemBox组件
-import CompanyItemBox from "../../components/company/CompanyItemBox";
+import CompanyItemBox from "../../components/apply-system/company/CompanyItemBox";
 // 导入UsedItem组件
-import UsedItem from "../../components/used/UsedItem";
+import UsedItem from "../../components/apply-system/used/UsedItem";
 export default {
   name: "company",
   components: {CompanyItemBox, UsedItem},

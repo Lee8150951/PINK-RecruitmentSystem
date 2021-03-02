@@ -8,7 +8,7 @@ const ApplyRegister = () => import("../views/premise/register/apply_register")
 const HireLogin = () => import("../views/premise/login/hire_login")
 const HireRegister = () => import("../views/premise/register/hire_register")
 // 应聘系统主体模块
-const System = () => import("../views/apply-system/main")
+const ApplySystem = () => import("../views/apply-system/main")
 const ApplyMain = () => import("../views/apply-system/home")
 const ApplyProfile = () => import("../views/apply-system/profile")
 const ApplyEdit = () => import("../views/apply-system/edit")
@@ -21,6 +21,8 @@ const ApplyCompanyDetail = () => import("../views/apply-system/details/company-d
 const ApplyPositionDetail = () => import("../views/apply-system/details/position-detail")
 const ApplyResume = () => import("../views/apply-system/resume")
 const ApplyResumeExport = () => import("../views/apply-system/export")
+// 招聘系统主体模块
+const HireSystem = () => import("../views/hire-system/main")
 
 Vue.use(Router)
 
@@ -54,7 +56,7 @@ const routes = [
   },
   {
     path: '/index',
-    component: System,
+    component: ApplySystem,
     // 配置子路由
     children: [
       {
@@ -106,6 +108,12 @@ const routes = [
         component: ApplyResumeExport
       }
     ]
+  },
+  {
+    path: '/hire',
+    component: HireSystem,
+    // 配置子路由
+    children: []
   }
 ]
 

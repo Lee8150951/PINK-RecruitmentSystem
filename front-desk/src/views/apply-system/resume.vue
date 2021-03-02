@@ -42,9 +42,9 @@
 
 <script>
 // 导入ResumeItem模块
-import ResumeItem from "../../components/resume/ResumeItem";
+import ResumeItem from "../../components/apply-system/resume/ResumeItem";
 // 导入ResumeBox模块
-import ResumeBox from "../../components/resume/ResumeBox";
+import ResumeBox from "../../components/apply-system/resume/ResumeBox";
 export default {
   name: "resume",
   components: {ResumeBox, ResumeItem},

@@ -241,13 +241,13 @@
   // 导入城市信息
   import {provinceAndCityDataPlus} from 'element-china-area-data'
   // 导入PracticePanel
-  import PracticePanel from "../../components/profile/PracticePanel";
+  import PracticePanel from "../../components/apply-system/profile/PracticePanel";
   // 导入ProjectPanel
-  import ProjectPanel from "../../components/profile/ProjectPanel";
+  import ProjectPanel from "../../components/apply-system/profile/ProjectPanel";
   // 导入EducatePanel
-  import EducatePanel from "../../components/profile/EducatePanel";
+  import EducatePanel from "../../components/apply-system/profile/EducatePanel";
   // 导入AnnexPanel
-  import AnnexPanel from "../../components/profile/AnnexPanel";
+  import AnnexPanel from "../../components/apply-system/profile/AnnexPanel";
   export default {
     name: "edit",
     components: {AnnexPanel, EducatePanel, ProjectPanel, PracticePanel},

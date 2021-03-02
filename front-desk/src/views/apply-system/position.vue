@@ -126,9 +126,9 @@
 
 <script>
 // 导入PostItem组件
-import PostItem from "../../components/post/PostItem";
+import PostItem from "../../components/apply-system/post/PostItem";
 // 导入UsedItem组件
-import UsedItem from "../../components/used/UsedItem";
+import UsedItem from "../../components/apply-system/used/UsedItem";
 export default {
   name: "position",
   components: {UsedItem, PostItem},
