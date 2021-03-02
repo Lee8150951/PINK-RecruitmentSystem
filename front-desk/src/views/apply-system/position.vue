@@ -37,14 +37,9 @@
                     工作经验<i class="el-icon-arrow-down el-icon--right"></i>
                   </span>
                   <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item>不限</el-dropdown-item>
-                    <el-dropdown-item>在校生</el-dropdown-item>
-                    <el-dropdown-item>应届生</el-dropdown-item>
-                    <el-dropdown-item>1年以内</el-dropdown-item>
-                    <el-dropdown-item>1-3年</el-dropdown-item>
-                    <el-dropdown-item>3-5年</el-dropdown-item>
-                    <el-dropdown-item>5-10年</el-dropdown-item>
-                    <el-dropdown-item>10年以上</el-dropdown-item>
+                    <el-dropdown-item v-for="(exp, index) in exp_interval" :key="index">
+                      <div @click="expSearch(exp)">{{exp.exp}}</div>
+                    </el-dropdown-item>
                   </el-dropdown-menu>
                 </el-dropdown>
                 <el-dropdown class="dropdown">
@@ -52,14 +47,9 @@
                     学历要求<i class="el-icon-arrow-down el-icon--right"></i>
                   </span>
                   <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item>不限</el-dropdown-item>
-                    <el-dropdown-item>初中及以下</el-dropdown-item>
-                    <el-dropdown-item>中专/技校</el-dropdown-item>
-                    <el-dropdown-item>高中</el-dropdown-item>
-                    <el-dropdown-item>大专</el-dropdown-item>
-                    <el-dropdown-item>本科</el-dropdown-item>
-                    <el-dropdown-item>硕士</el-dropdown-item>
-                    <el-dropdown-item>博士</el-dropdown-item>
+                    <el-dropdown-item v-for="(degree, index) in degree_interval" :key="index">
+                      <div @click="degreeSearch(degree)">{{degree.degree}}</div>
+                    </el-dropdown-item>
                   </el-dropdown-menu>
                 </el-dropdown>
                 <el-dropdown class="dropdown">
@@ -67,15 +57,9 @@
                     薪资要求<i class="el-icon-arrow-down el-icon--right"></i>
                   </span>
                   <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item>不限</el-dropdown-item>
-                    <el-dropdown-item>3K以下</el-dropdown-item>
-                    <el-dropdown-item>3-5K</el-dropdown-item>
-                    <el-dropdown-item>5-10K</el-dropdown-item>
-                    <el-dropdown-item>10-15K</el-dropdown-item>
-                    <el-dropdown-item>15-20K</el-dropdown-item>
-                    <el-dropdown-item>20-30K</el-dropdown-item>
-                    <el-dropdown-item>30-50K</el-dropdown-item>
-                    <el-dropdown-item>50K以上</el-dropdown-item>
+                    <el-dropdown-item v-for="(salary, index) in salary_interval" :key="index">
+                      <div @click="salarySearch(salary)">{{salary.salary}}</div>
+                    </el-dropdown-item>
                   </el-dropdown-menu>
                 </el-dropdown>
                 <el-dropdown class="dropdown">
@@ -83,12 +67,9 @@
                     发布时间<i class="el-icon-arrow-down el-icon--right"></i>
                   </span>
                   <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item>不限</el-dropdown-item>
-                    <el-dropdown-item>一天以内</el-dropdown-item>
-                    <el-dropdown-item>三天以内</el-dropdown-item>
-                    <el-dropdown-item>七天以内</el-dropdown-item>
-                    <el-dropdown-item>十五天以内</el-dropdown-item>
-                    <el-dropdown-item>一个月以内</el-dropdown-item>
+                    <el-dropdown-item v-for="(time, index) in time_interval" :key="index">
+                      <div @click="timeSearch(time)">{{time.time}}</div>
+                    </el-dropdown-item>
                   </el-dropdown-menu>
                 </el-dropdown>
               </div>
@@ -154,6 +135,138 @@ export default {
   data() {
     return {
       search: '',
+      exp_interval: [
+        {
+          key: 'exp_1',
+          exp: '不限'
+        },
+        {
+          key: 'exp_2',
+          exp: '在校生'
+        },
+        {
+          key: 'exp_3',
+          exp: '应届生'
+        },
+        {
+          key: 'exp_4',
+          exp: '1年以内'
+        },
+        {
+          key: 'exp_5',
+          exp: '1-3年'
+        },
+        {
+          key: 'exp_6',
+          exp: '3-5年'
+        },
+        {
+          key: 'exp_7',
+          exp: '5-10年'
+        },
+        {
+          key: 'exp_8',
+          exp: '10年以上'
+        }
+      ],
+      degree_interval: [
+        {
+          key: 'degree_1',
+          degree: '不限'
+        },
+        {
+          key: 'degree_2',
+          degree: '初中及以下'
+        },
+        {
+          key: 'degree_3',
+          degree: '中专/技校'
+        },
+        {
+          key: 'degree_4',
+          degree: '高中'
+        },
+        {
+          key: 'degree_5',
+          degree: '大专'
+        },
+        {
+          key: 'degree_6',
+          degree: '本科'
+        },
+        {
+          key: 'degree_7',
+          degree: '硕士'
+        },
+        {
+          key: 'degree_8',
+          degree: '博士'
+        }
+      ],
+      salary_interval: [
+        {
+          key: 'salary_1',
+          salary: '不限'
+        },
+        {
+          key: 'salary_2',
+          salary: '3K以下'
+        },
+        {
+          key: 'salary_3',
+          salary: '3-5K'
+        },
+        {
+          key: 'salary_4',
+          salary: '5-10K'
+        },
+        {
+          key: 'salary_5',
+          salary: '10-15K'
+        },
+        {
+          key: 'salary_6',
+          salary: '15-20K'
+        },
+        {
+          key: 'salary_7',
+          salary: '20-30K'
+        },
+        {
+          key: 'salary_8',
+          salary: '30-50K'
+        },
+        {
+          key: 'salary_9',
+          salary: '50K以上'
+        }
+      ],
+      time_interval: [
+        {
+          key: 'time_1',
+          time: '不限'
+        },
+        {
+          key: 'time_2',
+          time: '一天以内'
+        },
+        {
+          key: 'time_3',
+          time: '三天以内'
+        },
+        {
+          key: 'time_4',
+          time: '七天以内'
+        },
+        {
+          key: 'time_5',
+          time: '十五天以内'
+        },
+        {
+          key: 'time_6',
+          time: '一个月以内'
+        }
+      ],
       cities: [
         '上海', '北京', '广州', '深圳', '武汉', '南京', '杭州',
         '成都', '重庆', '青岛', '厦门', '天津', '宁波', '郑州',
@@ -176,6 +289,44 @@ export default {
           welfare: '员工旅游，带薪年假，定期体检，通讯补贴，交通补助...'
         }
       ]
+    }
+  },
+  methods: {
+    expSearch(exp) {
+      this.$router.push({
+        path: '/index/apply_position',
+        query: {
+          key: exp.key,
+          exp: exp.exp
+        }
+      })
+    },
+    degreeSearch(degree) {
+      this.$router.push({
+        path: '/index/apply_position',
+        query: {
+          key: degree.key,
+          degree: degree.degree
+        }
+      })
+    },
+    salarySearch(salary) {
+      this.$router.push({
+        path: '/index/apply_position',
+        query: {
+          key: salary.key,
+          salary: salary.salary
+        }
+      })
+    },
+    timeSearch(time) {
+      this.$router.push({
+        path: '/index/apply_position',
+        query: {
+          key: time.key,
+          time: time.time
+        }
+      })
     }
   }
 }

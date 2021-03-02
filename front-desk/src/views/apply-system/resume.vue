@@ -30,9 +30,9 @@
       </div>
       <div class="bottom-body">
         <el-row>
-          <resume-box v-for="(list, index) in modelList" :key="index">
-            <img :src="list.url" alt="" class="resume-img" slot="resume-img" @mouseover="mouseOver(index)" @mouseout="mouseOut(index)">
-            <span slot="resume-name">{{list.title}}</span>
+          <resume-box v-for="(list, index) in modelList" :key="list.m_id">
+            <img :src="list.m_img" alt="Resume-Model" class="resume-img" slot="resume-img" @mouseover="mouseOver(index)" @mouseout="mouseOut(index)" @click="turnMake(list)">
+            <span slot="resume-name">{{list.m_title}}</span>
           </resume-box>
         </el-row>
       </div>
@@ -52,28 +52,40 @@ export default {
     return {
       modelList: [
         {
-          url: require('../../assets/img/resume/resume_view1.jpg'),
-          title: '学生求职模板'
+          m_id: '1',
+          m_img: require('../../assets/img/resume/resume_view1.jpg'),
+          m_title: '学生求职模板',
+          m_url: ''
         },
         {
-          url: require('../../assets/img/resume/resume_view3.jpg'),
-          title: '商务通用模板'
+          m_id: '2',
+          m_img: require('../../assets/img/resume/resume_view3.jpg'),
+          m_title: '商务通用模板',
+          m_url: ''
         },
         {
-          url: require('../../assets/img/resume/resume_view2.jpg'),
-          title: '程序员/技术模板'
+          m_id: '3',
+          m_img: require('../../assets/img/resume/resume_view2.jpg'),
+          m_title: '程序员/技术模板',
+          m_url: ''
         },
         {
-          url: require('../../assets/img/resume/resume_view4.jpg'),
-          title: '产品/运营模板'
+          m_id: '4',
+          m_img: require('../../assets/img/resume/resume_view4.jpg'),
+          m_title: '产品/运营模板',
+          m_url: ''
         },
         {
-          url: require('../../assets/img/resume/resume_view5.jpg'),
-          title: '人事/行政模板'
+          m_id: '5',
+          m_img: require('../../assets/img/resume/resume_view5.jpg'),
+          m_title: '人事/行政模板',
+          m_url: ''
         },
         {
-          url: require('../../assets/img/resume/resume_view6.jpg'),
-          title: '其他产业模板'
+          m_id: '6',
+          m_img: require('../../assets/img/resume/resume_view6.jpg'),
+          m_title: '其他产业模板',
+          m_url: ''
         },
       ]
     }
@@ -86,6 +98,15 @@ export default {
     mouseOut(index) {
       const dom = document.getElementsByClassName("resume-img")
       dom[index].style.opacity = 1
+    },
+    turnMake(list) {
+      this.$router.push({
+        path: '/index/apply_export',
+        query: {
+          m_id: list.m_id,
+          m_title: list.m_title
+        }
+      })
     }
   }
 }

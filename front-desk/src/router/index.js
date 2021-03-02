@@ -20,6 +20,7 @@ const ApplyNews = () => import("../views/apply-system/news")
 const ApplyCompanyDetail = () => import("../views/apply-system/details/company-detail")
 const ApplyPositionDetail = () => import("../views/apply-system/details/position-detail")
 const ApplyResume = () => import("../views/apply-system/resume")
+const ApplyResumeExport = () => import("../views/apply-system/export")
 
 Vue.use(Router)
 
@@ -99,6 +100,10 @@ const routes = [
       {
         path: "apply_resume",
         component: ApplyResume
+      },
+      {
+        path: "apply_export",
+        component: ApplyResumeExport
       }
     ]
   }
