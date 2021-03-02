@@ -19,6 +19,7 @@ const ApplyForum = () => import("../views/apply-system/forum")
 const ApplyNews = () => import("../views/apply-system/news")
 const ApplyCompanyDetail = () => import("../views/apply-system/details/company-detail")
 const ApplyPositionDetail = () => import("../views/apply-system/details/position-detail")
+const ApplyResume = () => import("../views/apply-system/resume")
 
 Vue.use(Router)
 
@@ -94,6 +95,10 @@ const routes = [
       {
         path: "position_detail",
         component: ApplyPositionDetail
+      },
+      {
+        path: "apply_resume",
+        component: ApplyResume
       }
     ]
   }
