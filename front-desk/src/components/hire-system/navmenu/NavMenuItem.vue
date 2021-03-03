@@ -1,5 +1,5 @@
 <template>
-  <li class="feature-li" @mouseover="mouseOver(item)" @mouseout="mouseOut(item)">
+  <li class="feature-li" @mouseover="mouseOver(item)" @mouseout="mouseOut(item)" @click="turnTo(item)">
     <i :class="item.icon" class="feature-icon"></i>
     {{item.title}}
   </li>
@@ -21,6 +21,11 @@ export default {
       const dom = document.getElementsByClassName("feature-li")
       dom[item.index].style.backgroundColor = "#2a2d36"
       dom[item.index].style.color = "#959ba1"
+    },
+    turnTo(item) {
+      this.$router.push({
+        path: item.path
+      })
     }
   }
 }

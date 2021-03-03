@@ -23,6 +23,10 @@ const ApplyResume = () => import("../views/apply-system/resume")
 const ApplyResumeExport = () => import("../views/apply-system/export")
 // 招聘系统主体模块
 const HireSystem = () => import("../views/hire-system/main")
+const HireMain = () => import("../views/hire-system/home")
+const HireAttract = () => import("../views/hire-system/attract")
+const HireRelease = () => import("../views/hire-system/release")
+const HireProfile = () => import("../views/hire-system/profile")
 
 Vue.use(Router)
 
@@ -113,7 +117,24 @@ const routes = [
     path: '/hire',
     component: HireSystem,
     // 配置子路由
-    children: []
+    children: [
+      {
+        path: "hire_home",
+        component: HireMain
+      },
+      {
+        path: "hire_attract",
+        component: HireAttract
+      },
+      {
+        path: "hire_release",
+        component: HireRelease
+      },
+      {
+        path: "hire_profile",
+        component: HireProfile
+      }
+    ]
   }
 ]
 

@@ -1,5 +1,5 @@
 <template>
-  <el-row class="height-all">
+  <el-row class="height-all all-bgc">
     <el-col :span="4" class="height-all">
       <div class="left-content height-all">
         <div class="logo-col">
@@ -43,17 +43,25 @@
             </div>
           </el-col>
         </el-row>
+        <div class="main-body">
+          <router-view></router-view>
+          <drawer-box></drawer-box>
+        </div>
       </div>
     </el-col>
   </el-row>
 </template>
 
 <script>
+// 导入NavMenuItem模块
 import NavMenuItem from "../../components/hire-system/navmenu/NavMenuItem";
+// 导入AvatarItem模块
 import AvatarItem from "../../components/hire-system/navmenu/AvatarItem";
+// 导入DrawerBox模块
+import DrawerBox from "../../components/hire-system/drawer/DrawerBox";
 export default {
   name: "main",
-  components: {AvatarItem, NavMenuItem},
+  components: {DrawerBox, AvatarItem, NavMenuItem},
   data() {
     return {
       search: '',
@@ -62,25 +70,25 @@ export default {
           index: '0',
           title: '总览 Dashboard',
           icon: 'el-icon-odometer',
-          path: ''
+          path: '/hire/hire_home'
         },
         {
           index: '1',
           title: '招揽 Attract',
           icon: 'el-icon-attract',
-          path: ''
+          path: '/hire/hire_attract'
         },
         {
           index: '2',
           title: '发布 Release',
           icon: 'el-icon-position',
-          path: ''
+          path: '/hire/hire_release'
         },
         {
           index: '3',
           title: '个人 Profile',
           icon: 'el-icon-user',
-          path: ''
+          path: '/hire/hire_profile'
         },
       ]
     }
