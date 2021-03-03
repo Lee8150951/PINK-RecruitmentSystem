@@ -2,12 +2,13 @@
   height: 100%;
 }
 .all-bgc {
-  background-color: #f7f7f7;
+  background-color: #f6f6f6;
 }
 .left-content {
   background-color: #2a2d36;
-  box-shadow: 3px 0 2px #b3b3b3;
-  z-index: 5;
+  box-shadow: 3px 60px 2px #b3b3b3;
+  position: relative;
+  z-index: 2;
 }
 .logo-col {
   width: 100%;

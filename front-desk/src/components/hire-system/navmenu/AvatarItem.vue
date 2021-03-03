@@ -37,7 +37,7 @@ export default {
     },
     Logout() {
       this.$router.push({
-        path: '/premise/apply_login'
+        path: '/premise/hire_login'
       })
     }
   }

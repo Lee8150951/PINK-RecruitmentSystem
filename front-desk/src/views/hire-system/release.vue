@@ -1,12 +1,16 @@
 <template>
   <div class="release-body">
-    Release
+    <page-title>
+      发布 Release
+    </page-title>
   </div>
 </template>
 
 <script>
+import PageTitle from "../../components/hire-system/title/PageTitle";
 export default {
-  name: "release"
+  name: "release",
+  components: {PageTitle}
 }
 </script>
 

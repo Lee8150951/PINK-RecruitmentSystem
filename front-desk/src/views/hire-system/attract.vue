@@ -1,12 +1,16 @@
 <template>
   <div class="attract-body">
-    Attract
+    <page-title>
+      招揽 Attract
+    </page-title>
   </div>
 </template>
 
 <script>
+import PageTitle from "../../components/hire-system/title/PageTitle";
 export default {
-  name: "attract"
+  name: "attract",
+  components: {PageTitle}
 }
 </script>
 

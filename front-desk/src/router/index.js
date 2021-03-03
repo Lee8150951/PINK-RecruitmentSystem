@@ -27,6 +27,7 @@ const HireMain = () => import("../views/hire-system/home")
 const HireAttract = () => import("../views/hire-system/attract")
 const HireRelease = () => import("../views/hire-system/release")
 const HireProfile = () => import("../views/hire-system/profile")
+const HireChat = () => import("../views/hire-system/chats")
 
 Vue.use(Router)
 
@@ -133,6 +134,10 @@ const routes = [
       {
         path: "hire_profile",
         component: HireProfile
+      },
+      {
+        path: "hire_chat",
+        component: HireChat
       }
     ]
   }

@@ -1,12 +1,16 @@
 <template>
   <div class="profile-body">
-    Profile
+    <page-title>
+      个人 Profile
+    </page-title>
   </div>
 </template>
 
 <script>
+import PageTitle from "../../components/hire-system/title/PageTitle";
 export default {
-  name: "profile"
+  name: "profile",
+  components: {PageTitle}
 }
 </script>
 
