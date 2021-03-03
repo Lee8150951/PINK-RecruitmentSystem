@@ -28,13 +28,21 @@
             <div class="info-title">
               备忘录 Memo
             </div>
-            <div class="memo-col">
+            <div class="memo-col" @click="dialogVisible = true">
               <span class="memo-big">{{memo_big}}</span>
               <span>{{memo_body}}</span>
             </div>
           </div>
         </el-col>
       </el-row>
+      <el-dialog title="备忘录更改" :visible.sync="dialogVisible">
+        <form action="">
+          <el-input type="textarea" :autosize="{ minRows: 6, maxRows: 10}" placeholder="请输入内容" v-model="memo.memo"></el-input>
+          <div class="dialogue">
+            <el-button type="primary" class="memo-btn">修改</el-button>
+          </div>
+        </form>
+      </el-dialog>
     </div>
   </div>
 </template>
@@ -51,6 +59,7 @@ export default {
   components: {CommunityList, ViewItem, PageTitle},
   data() {
     return {
+      dialogVisible: false,
       memo_big: '',
       memo_body: '',
       overviews: [

@@ -12,3 +12,7 @@
 .route {
   background-color: #f6f6f8;
 }
+.avatar {
+  border-radius: 50%;
+  width: 35px;
+}

@@ -20,7 +20,7 @@
               <div class="province-content">
                 <span>热门城市：</span>
                 <span v-for="city in cities" class="city">
-                  <el-button type="text" class="city-btn">{{city}}</el-button>
+                  <el-button type="text" class="city-btn" @click="citySearch(city)">{{city}}</el-button>
                 </span>
                 <span class="more-city">
                   <el-button type="text" class="city-btn">全部城市</el-button>
@@ -325,6 +325,14 @@ export default {
         query: {
           key: time.key,
           time: time.time
+        }
+      })
+    },
+    citySearch(city) {
+      this.$router.push({
+        path: '/index/apply_position',
+        query: {
+          city: city
         }
       })
     }

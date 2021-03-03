@@ -10,7 +10,7 @@
               <div class="screen-content">
                 <span>公司地点：</span>
                 <span v-for="city in cities" class="city">
-                  <el-button type="text" class="screen-btn">{{city}}</el-button>
+                  <el-button type="text" class="screen-btn" @click="citySearch(city)">{{city}}</el-button>
                 </span>
                 <span class="more-city">
                   <el-button type="text" class="screen-btn">全部城市</el-button>
@@ -24,7 +24,7 @@
               <div class="screen-content">
                 <span>行业类型：</span>
                 <span v-for="type in types" class="screen">
-                  <el-button type="text" class="screen-btn">{{type}}</el-button>
+                  <el-button type="text" class="screen-btn" @click="typeSearch(type)">{{type}}</el-button>
                 </span>
               </div>
             </el-col>
@@ -35,7 +35,7 @@
               <div class="screen-content">
                 <span>公司规模：</span>
                 <span v-for="scale in scales" class="screen">
-                  <el-button type="text" class="screen-btn">{{scale}}</el-button>
+                  <el-button type="text" class="screen-btn" @click="scaleSearch(scale)">{{scale}}</el-button>
                 </span>
               </div>
             </el-col>
@@ -100,6 +100,32 @@ export default {
           salary: '10-15K'
         }
       ]
+    }
+  },
+  methods: {
+    citySearch(city) {
+      this.$router.push({
+        path: '/index/apply_company',
+        query: {
+          city: city
+        }
+      })
+    },
+    typeSearch(type) {
+      this.$router.push({
+        path: '/index/apply_company',
+        query: {
+          type: type
+        }
+      })
+    },
+    scaleSearch(scale) {
+      this.$router.push({
+        path: '/index/apply_company',
+        query: {
+          scale: scale
+        }
+      })
     }
   }
 }

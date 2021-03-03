@@ -34,7 +34,14 @@
   padding: 30px 30px;
   line-height: 25px;
   font-weight: lighter;
+  cursor: pointer;
 }
 .memo-big {
   font-size: 40px;
+}
+.dialogue {
+  text-align: right;
+}
+.memo-btn {
+  margin-top: 20px;
 }
