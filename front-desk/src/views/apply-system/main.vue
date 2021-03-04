@@ -1,5 +1,5 @@
 <template>
-  <div class="main" style="height: 100%">
+  <div class="main">
     <header class="header" style="z-index: 1">
       <nav-menu>
         <nav-menu-item style="margin-left: 10%" path="/index/apply_home">首页</nav-menu-item>

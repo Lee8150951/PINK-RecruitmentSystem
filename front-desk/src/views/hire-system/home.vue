@@ -68,28 +68,32 @@ export default {
           icon: 'el-icon-s-custom',
           cn_name: '总招揽人数',
           en_name: 'Recruited-Num',
-          num: '27'
+          num: '27',
+          path: ''
         },
         {
           index: 1,
           icon: 'el-icon-s-claim',
           cn_name: '已发布岗位',
           en_name: 'Released-Position',
-          num: '32'
+          num: '32',
+          path: ''
         },
         {
           index: 2,
           icon: 'el-icon-s-comment',
           cn_name: '意向人数',
           en_name: 'Intentional-Num',
-          num: '1242'
+          num: '1242',
+          path: ''
         },
         {
           index: 3,
           icon: 'el-icon-s-opportunity',
           cn_name: '收藏应聘者',
           en_name: 'Collected-Num',
-          num: '504'
+          num: '504',
+          path: ''
         },
       ],
       community_list: [
@@ -149,7 +153,7 @@ export default {
   methods: {
     turnToChat() {
       this.$router.push({
-        path: ''
+        path: '/hire/hire_chat'
       })
     }
   },

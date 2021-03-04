@@ -1,7 +1,7 @@
 <template>
   <div class="home-body">
     <div class="index-background">
-      <span class="mask">1</span>
+      <span class="mask"></span>
       <div class="main-title_1">Hi, {{user.name}}</div>
       <div class="main-title_2">欢迎使用「PINK」</div>
     </div>
