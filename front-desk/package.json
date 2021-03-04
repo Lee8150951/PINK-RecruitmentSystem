@@ -10,7 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "echarts": "^5.0.2",
+    "echarts": "^4.9.0",
     "element-china-area-data": "^5.0.2",
     "element-ui": "^2.15.0",
     "vue": "^2.5.2",

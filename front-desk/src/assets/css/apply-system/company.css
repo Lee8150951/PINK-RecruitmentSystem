@@ -2,6 +2,7 @@
   min-height: 150px;
   background-color: #ffffff;
   padding: 20px 0;
+  border-bottom: 1px solid #efefef;
 }
 .grid-content {
   min-height: 30px;

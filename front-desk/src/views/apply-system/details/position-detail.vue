@@ -14,6 +14,7 @@
       <el-col :span="8">
         <div class="grid-content">
           <el-button type="warning" class="communicate-btn" @click="dialogFormVisible = true">立即沟通</el-button>
+          <el-button type="success" class="communicate-btn" @click="submitApplication">投递申请</el-button>
         </div>
       </el-col>
       <el-dialog :title="position.contact" :visible.sync="dialogFormVisible">
@@ -340,6 +341,9 @@ export default {
           index: this.company.index
         }
       })
+    },
+    submitApplication() {
+      alert("成功！")
     }
   }
 }

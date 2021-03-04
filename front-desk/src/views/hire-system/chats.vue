@@ -1,7 +1,7 @@
 <template>
   <div class="release-body">
     <page-title>
-      通讯 Community
+      讯息 Chats
     </page-title>
   </div>
 </template>

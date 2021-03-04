@@ -1,8 +1,8 @@
 <template>
   <div>
     <el-button @click="drawer = true" type="primary" icon="el-icon-s-operation" circle class="drawer-btn"></el-button>
-    <el-drawer title="我是标题" :visible.sync="drawer" :with-header="false">
-      <span>我来啦!</span>
+    <el-drawer :visible.sync="drawer" :with-header="false">
+      <span>未施工，敬请期待！</span>
     </el-drawer>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <span>
     <el-popover placement="top-start" trigger="hover" class="popover-col">
       <ul>
-        <li id="profile" class="popover" @mouseout="mouseOut_1" @mouseover="mouseOver_1">设置</li>
+        <li id="profile" class="popover" @mouseout="mouseOut_1" @mouseover="mouseOver_1" @click="turnTo">设置</li>
         <li id="exit" class="popover" @mouseout="mouseOut_2" @mouseover="mouseOver_2" @click="Logout">退出</li>
       </ul>
       <img slot="reference" src="../../../assets/img/avatar/avatar01.png" class="avatar">
@@ -38,6 +38,11 @@ export default {
     Logout() {
       this.$router.push({
         path: '/premise/hire_login'
+      })
+    },
+    turnTo() {
+      this.$router.push({
+        path: '/hire/hire_profile'
       })
     }
   }

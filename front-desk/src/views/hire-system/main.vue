@@ -86,6 +86,12 @@ export default {
         },
         {
           index: '3',
+          title: '讯息 Chats',
+          icon: 'el-icon-chat-round',
+          path: '/hire/hire_chat'
+        },
+        {
+          index: '4',
           title: '个人 Profile',
           icon: 'el-icon-user',
           path: '/hire/hire_profile'
