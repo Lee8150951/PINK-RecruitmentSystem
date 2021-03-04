@@ -1,6 +1,9 @@
 .item-content {
   height: 80px;
-  border-bottom: 1px solid #e8e8e8;
+  cursor: pointer;
+  padding-left: 30px;
+  padding-top: 10px;
+  transition: 0.3s;
 }
 .left-item-content {
   text-align: left;

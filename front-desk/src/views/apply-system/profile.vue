@@ -30,8 +30,9 @@
         <div class="grid-content">
           <div class="personal-info">
             <ul>
-              <li>
-                <img src="../../assets/img/avatar/avatar02.png" alt="" class="personal-img">
+              <li class="relative">
+                <img :src="user.avatar" alt="" class="personal-img">
+                <span class="occupy" @mouseout="mouseOut" @mouseover="mouseOver" @click="editAvatarDialog = true">修改</span>
                 <el-button type="text" class="personal-btn" @click="editInfo">编辑</el-button>
               </li>
               <li>
@@ -76,6 +77,17 @@
               </li>
             </ul>
           </div>
+          <el-dialog title="修改头像" :visible.sync="editAvatarDialog" width="30%">
+            <div class="upload-div">
+              <el-upload action="" :before-upload="beforeAvatarUpload" list-type="picture-card" :on-remove="handleRemove" :limit="1">
+                <i class="el-icon-plus"></i>
+              </el-upload>
+            </div>
+            <div slot="footer" class="dialog-footer">
+              <el-button @click="editAvatarDialog = false">取 消</el-button>
+              <el-button type="primary" @click="editAvatarDialog = false">确 定</el-button>
+            </div>
+          </el-dialog>
           <el-drawer title="开通会员" :visible.sync="drawer">
           </el-drawer>
           <annex-panel style="margin-top: 20px"></annex-panel>
@@ -96,7 +108,9 @@
 </template>
 
 <script>
+// 导入PostItem模块
 import PostItem from "../../components/apply-system/post/PostItem";
+// 导入AnnexPanel模块
 import AnnexPanel from "../../components/apply-system/profile/AnnexPanel";
 export default {
   name: "profile",
@@ -106,6 +120,8 @@ export default {
       research: '',
       activeName: 'first',
       drawer: false,
+      editAvatarDialog: false,
+      imageUrl: '',
       posts: [
         {
           index: 1,
@@ -159,7 +175,8 @@ export default {
         c_excity: '深圳',
         c_school: '华中科技大学',
         name: '马小超',
-        age: 23
+        age: 23,
+        avatar: require("../../assets/img/avatar/avatar02.png")
       }
     }
   },
@@ -172,6 +189,33 @@ export default {
           name: this.user.name
         }
       })
+    },
+    mouseOver() {
+      const dom = document.getElementsByClassName("occupy");
+      dom[0].style.opacity = 1;
+    },
+    mouseOut() {
+      const dom = document.getElementsByClassName("occupy");
+      dom[0].style.opacity = 0;
+    },
+    handleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    beforeAvatarUpload(file) {
+      // 判断大小
+      const isLt2M = file.size / 1024 / 1024 < 1;
+      // 判断文件类型
+      const fileSuffix = file.name.substring(file.name.lastIndexOf(".") + 1);
+      const whiteList = ["png", "jpg", "jpeg", "PNG", "JPG", "JPEG"];
+      // 判断大小
+      if (!isLt2M) {
+        this.$message.error('上传头像图片大小不能超过1MB!');
+      }
+      // 判断文件类型
+      if (whiteList.indexOf(fileSuffix) === -1) {
+        this.$message.error("上传文件只能是png, jpg, jpeg格式");
+        return false;
+      }
     }
   }
 }

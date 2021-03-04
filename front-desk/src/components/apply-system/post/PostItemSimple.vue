@@ -1,6 +1,6 @@
 <template>
   <el-col :span="24">
-    <div class="item-content">
+    <div class="item-content" @mouseout="mouseOut" @mouseover="mouseOver" @click="turnTo">
       <el-row>
         <el-col :span="12">
           <div class="left-item-content">
@@ -29,6 +29,26 @@ export default {
   props: {
     post: {
       type: Object
+    },
+    index: Number
+  },
+  methods: {
+    mouseOver() {
+      const dom = document.getElementsByClassName("item-content");
+      dom[this.index].style.backgroundColor = "#e8e8e8"
+    },
+    mouseOut() {
+      const dom = document.getElementsByClassName("item-content");
+      dom[this.index].style.backgroundColor = "#ffffff"
+    },
+    turnTo() {
+      this.$router.push({
+        path: '/index/position_detail',
+        query: {
+          index: this.post.index,
+          name: this.post.name
+        }
+      })
     }
   }
 }

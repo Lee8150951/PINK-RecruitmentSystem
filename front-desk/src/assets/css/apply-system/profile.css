@@ -29,9 +29,28 @@
   text-align: center;
   padding: 20px 20px;
 }
+.relative {
+  position: relative;
+}
+.occupy {
+  position: absolute;
+  left:0; right:0; top:0; bottom:0;
+  margin:auto;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(75, 75, 75, 0.3);
+  cursor: pointer;
+  border-radius: 50%;
+  color: white;
+  font-size: 12px;
+  line-height: 70px;
+  transition: 0.3s;
+  opacity: 0;
+}
 .personal-img {
   border-radius: 50%;
   height: 70px;
+  cursor: pointer;
 }
 .personal-info li {
   margin-top: 8px;
@@ -87,4 +106,7 @@
 }
 .big-num {
   font-size: 16px;
+}
+.upload-div {
+  text-align: center;
 }

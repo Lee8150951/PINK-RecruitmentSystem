@@ -69,7 +69,7 @@
           <div class="c-position">
             <h3>在招岗位</h3>
             <el-row class="p-items">
-              <post-item-simple v-for="post in posts" :key="post.index" :post="post"></post-item-simple>
+              <post-item-simple v-for="(post, index) in posts" :key="post.index" :post="post" :index="index"></post-item-simple>
             </el-row>
           </div>
         </div>
