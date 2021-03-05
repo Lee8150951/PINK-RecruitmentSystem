@@ -18,7 +18,6 @@
           <el-table-column prop="position" label="申请岗位" width="130" sortable/>
           <el-table-column fixed="right" label="操作" width="130">
             <template slot-scope="scope">
-              <el-button @click="editClick(scope.row)" type="text" size="small">编辑</el-button>
               <el-popconfirm title="确定删除？">
                 <el-button slot="reference" @click="deleteClick(scope.row)" type="text" size="small">删除</el-button>
               </el-popconfirm>
