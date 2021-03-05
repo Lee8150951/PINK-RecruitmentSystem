@@ -15,7 +15,7 @@
               <li class="user-name">{{user.name}}</li>
               <li class="company-name">腾讯(深圳)科技有限公司</li>
               <li class="edit-col">
-                <span style="cursor: pointer">编辑</span>
+                <span style="cursor: pointer" @click="turnEdit">编辑</span>
               </li>
             </ul>
           </div>
@@ -259,6 +259,11 @@ export default {
       tMonth = this.doHandleMonth(tMonth + 1);
       tDate = this.doHandleMonth(tDate);
       return tMonth + "-" + tDate;
+    },
+    turnEdit() {
+      this.$router.push({
+        path: '/hire/hire_edit'
+      })
     }
   },
   mounted() {

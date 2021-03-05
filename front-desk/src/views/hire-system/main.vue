@@ -27,7 +27,7 @@
             <div class="right-search-content">
               <span>
                 <el-badge :value="23" :max="99" class="item-badge">
-                  <el-button type="text" class="top-btn">
+                  <el-button type="text" class="top-btn" @click="turnChat">
                     <i class="el-icon-chat-dot-round"></i>
                   </el-button>
                 </el-badge>
@@ -97,6 +97,13 @@ export default {
           path: '/hire/hire_profile'
         },
       ]
+    }
+  },
+  methods: {
+    turnChat() {
+      this.$router.push({
+        path: '/hire/hire_chat'
+      })
     }
   }
 }
