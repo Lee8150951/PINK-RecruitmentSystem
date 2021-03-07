@@ -13,7 +13,7 @@
                 <img src="../../assets/img/avatar/avatar02.png" alt="" class="avatar">
               </li>
               <li class="user-name">{{user.name}}</li>
-              <li class="company-name">腾讯(深圳)科技有限公司</li>
+              <li class="company-name">{{company.e_name}}</li>
               <li class="edit-col">
                 <span style="cursor: pointer" @click="turnEdit">编辑</span>
               </li>

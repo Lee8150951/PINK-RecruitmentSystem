@@ -18,6 +18,7 @@
           <el-table-column prop="position" label="申请岗位" width="130" sortable/>
           <el-table-column fixed="right" label="操作" width="130">
             <template slot-scope="scope">
+              <el-button @click="detailClick(scope.row)" type="text" size="small">详情</el-button>
               <el-popconfirm title="确定删除？">
                 <el-button slot="reference" @click="deleteClick(scope.row)" type="text" size="small">删除</el-button>
               </el-popconfirm>
@@ -105,8 +106,15 @@ export default {
     }
   },
   methods: {
-    editClick(index) {
-      console.log(index)
+    detailClick(index) {
+      this.$router.push({
+        path: '/hire/attract_detail',
+        query: {
+          id: index.id,
+          name: index.name,
+          p_id: index.p_id
+        }
+      })
     },
     deleteClick(index) {
       console.log(index)

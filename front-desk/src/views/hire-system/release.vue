@@ -104,7 +104,7 @@
           <el-table-column prop="r_introduction" label="备注" width="210" sortable/>
           <el-table-column fixed="right" label="操作" width="130">
             <template slot-scope="scope">
-              <el-button @click="editClick(scope.row)" type="text" size="small">编辑</el-button>
+              <el-button @click="detailClick(scope.row)" type="text" size="small">详情</el-button>
               <el-popconfirm title="确定删除？">
                 <el-button slot="reference" @click="deleteClick(scope.row)" type="text" size="small">删除</el-button>
               </el-popconfirm>
@@ -213,8 +213,15 @@ export default {
     }
   },
   methods: {
-    editClick(index) {
-      console.log(index)
+    detailClick(index) {
+      this.$router.push({
+        path: '/hire/release_detail',
+        query: {
+          ehrid: index.ehrid,
+          r_name: index.r_name,
+          r_id: index.r_id
+        }
+      })
     },
     deleteClick(index) {
       console.log(index)
