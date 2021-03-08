@@ -135,7 +135,7 @@
                 </div>
               </el-col>
               <el-col :span="12" class="ie-right">
-                <div class="ei-title">第一实习经历</div>
+                <div class="ei-title">第二实习经历</div>
                 <div>
                   <el-row>
                     <el-col :span="5">
