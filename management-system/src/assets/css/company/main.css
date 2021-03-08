@@ -1,0 +1,47 @@
+.all-bgc {
+  background-color: #f1f6fc;
+}
+.aside-bar {
+  height: 100%;
+  background-color: #fbfbfd;
+  box-shadow: 3px 60px 2px #b3b3b3;
+}
+.logo-col {
+  padding: 10px 0 10px 20px;
+  height: 60px;
+}
+.company-logo {
+  width: 43px;
+}
+.main-title {
+  font-size: 21px;
+  font-weight: bolder;
+  color: #191c21;
+}
+.sub-title {
+  font-size: 12px;
+  font-weight: lighter;
+  color: #c2c2c4;
+}
+.nav-bar {
+  width: 100%;
+  background-color: #fbfbfd;
+  box-shadow: 3px 2px 4px #b3b3b3;
+  height: 60px;
+}
+.search-col {
+  margin-top: 15px;
+  padding-left: 80%;
+  text-align: right;
+}
+.search-input /deep/ .el-input__inner {
+  border-radius: 20px;
+  height: 30px;
+}
+/deep/ .el-input__icon {
+  margin-top: -5px;
+}
+.avatar-col {
+  margin-top: 10px;
+  margin-left: 30%;
+}

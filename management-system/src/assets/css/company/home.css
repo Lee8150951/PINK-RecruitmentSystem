@@ -1,0 +1,18 @@
+.main-body {
+  padding: 0 40px;
+}
+.tl-panel {
+  height: 360px;
+  background-color: #1e3058;
+  border: 2px solid #dcdcdc;
+  padding: 25px 20px 20px;
+}
+.greet-time {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: bold;
+}
+.greet-target {
+  color: #ffffff;
+  font-size: 25px;
+}

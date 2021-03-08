@@ -4,20 +4,26 @@ import Router from 'vue-router'
 // 登录注册模块
 const Initialization = () => import("../views/premise/Initialization")
 const LoginMain = () => import("../views/premise/login/main")
-const LoginAdmin = () => import("../views/premise/login/admin_login/admin_login")
-const LoginCompany = () => import("../views/premise/login/company_login/company_login")
+const LoginAdmin = () => import("../views/premise/login/admin_login")
+const LoginCompany = () => import("../views/premise/login/company_login")
 const RegisterMain = () => import("../views/premise/register/main")
-const RegisterAdmin = () => import("../views/premise/register/admin_register/admin_register")
-const RegisterCompany = () => import("../views/premise/register/company_register/company_register")
+const RegisterAdmin = () => import("../views/premise/register/admin_register")
+const RegisterCompany = () => import("../views/premise/register/company_register")
 // 管理员模块
 const AdminMain = () => import("../views/admin/main")
-const AdminIndex = () => import("../views/admin/index/admin_index")
-const AdminProfile = () => import("../views/admin/profile/admin_profile")
-const ManageAdmin = () => import("../views/admin/management/admin/manage_admin")
-const ManageCompany = () => import("../views/admin/management/company/manage_company")
-const ManageUser = () => import("../views/admin/management/user/manage_user")
-const AddCompany = () => import("../views/admin/management/company/add_company")
-const EditCompany = () => import("../views/admin/management/company/edit_company")
+const AdminIndex = () => import("../views/admin/admin_index")
+const AdminProfile = () => import("../views/admin/admin_profile")
+const AdminManageAdmin = () => import("../views/admin/manage_admin")
+const AdminManageCompany = () => import("../views/admin/manage_company")
+const AdminManageUser = () => import("../views/admin/manage_user")
+const AdminAddCompany = () => import("../views/admin/add_company")
+const AdminEditCompany = () => import("../views/admin/edit_company")
+// 公司模块
+const CompanyMain = () => import("../views/company/main")
+const CompanyIndex = () => import("../views/company/home")
+const CompanyProfile = () => import("../views/company/profile")
+const CompanyList = () => import("../views/company/list")
+const CompanyHrDetail = () => import("../views/company/detail/hr_detail")
 
 Vue.use(Router)
 
@@ -71,28 +77,51 @@ const routes = [
       },
       {
         path: 'manage_admin',
-        component: ManageAdmin
+        component: AdminManageAdmin
       },
       {
         path: 'manage_company',
-        component: ManageCompany
+        component: AdminManageCompany
       },
       {
         path: 'add_company',
-        component: AddCompany
+        component: AdminAddCompany
       },
       {
         path: 'edit_company',
-        component: EditCompany
+        component: AdminEditCompany
       },
       {
         path: 'manage_user',
-        component: ManageUser
+        component: AdminManageUser
       },
       {
         path: 'admin_profile',
         component: AdminProfile
       }
+    ]
+  },
+  {
+    path: '/company',
+    component: CompanyMain,
+    // 配置子路由
+    children: [
+      {
+        path: 'index',
+        component: CompanyIndex
+      },
+      {
+        path: 'profile',
+        component: CompanyProfile
+      },
+      {
+        path: 'list',
+        component: CompanyList
+      },
+      {
+        path: 'hr_detail',
+        component: CompanyHrDetail
+      },
     ]
   }
 ]

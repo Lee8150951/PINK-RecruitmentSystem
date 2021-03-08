@@ -33,11 +33,11 @@
 
 <script>
 // 导入NavMenu组件
-import NavMenu from "../../components/navmenu/NavMenu";
+import NavMenu from "../../components/admin/navmenu/NavMenu";
 // 导入SideBar组件
-import SideBar from "../../components/sidebar/SideBar";
+import SideBar from "../../components/admin/sidebar/SideBar";
 // 导入SideBarItem组件
-import SideBarItem from "../../components/sidebar/SideBarItem";
+import SideBarItem from "../../components/admin/sidebar/SideBarItem";
 export default {
   name: "main",
   components: {SideBarItem, SideBar, NavMenu}
