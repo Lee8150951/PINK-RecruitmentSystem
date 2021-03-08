@@ -4,7 +4,7 @@
 .aside-bar {
   height: 100%;
   background-color: #fbfbfd;
-  box-shadow: 3px 60px 2px #b3b3b3;
+  border-right: 1px solid #e7e7e7;
 }
 .logo-col {
   padding: 10px 0 10px 20px;
@@ -12,6 +12,7 @@
 }
 .company-logo {
   width: 43px;
+  margin-left: 10px;
 }
 .main-title {
   font-size: 21px;
@@ -26,7 +27,7 @@
 .nav-bar {
   width: 100%;
   background-color: #fbfbfd;
-  box-shadow: 3px 2px 4px #b3b3b3;
+  border-bottom: 1px solid #e7e7e7;
   height: 60px;
 }
 .search-col {

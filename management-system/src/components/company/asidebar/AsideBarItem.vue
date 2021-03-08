@@ -20,7 +20,7 @@ export default {
     mouseOut(item) {
       const dom = document.getElementsByClassName("feature-li")
       dom[item.index].style.backgroundColor = ""
-      dom[item.index].style.color = "#2d3132"
+      dom[item.index].style.color = "#6c6c6c"
     },
     turnTo(item) {
       this.$router.push({

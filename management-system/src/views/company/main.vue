@@ -5,7 +5,7 @@
         <div class="logo-col">
           <el-row>
             <el-col :span="6">
-              <img src="../../assets/img/logo/logo_blue.png" alt="" class="company-logo">
+              <img src="../../assets/img/logo/logo_03.png" alt="logo" class="company-logo">
             </el-col>
             <el-col :span="18">
               <ul>
