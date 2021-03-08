@@ -150,3 +150,17 @@
   margin-top: 20px;
   border: 1px solid #e5e5e5;
 }
+.left-form {
+  border-right: 1px solid #e7e7e7;
+}
+.right-form {
+  padding-left: 20px;
+}
+.form-li {
+  padding-right: 25px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.form-title {
+  line-height: 40px;
+}

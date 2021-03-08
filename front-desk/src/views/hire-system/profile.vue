@@ -15,7 +15,7 @@
               <li class="user-name">{{user.name}}</li>
               <li class="company-name">{{company.e_name}}</li>
               <li class="edit-col">
-                <span style="cursor: pointer" @click="turnEdit">编辑</span>
+                <span style="cursor: pointer" @click="editVisible = true">编辑</span>
               </li>
             </ul>
           </div>
@@ -158,6 +158,63 @@
         <el-button type="primary" @click="editAvatarDialog = false">确 定</el-button>
       </div>
     </el-dialog>
+    <el-dialog title="基本信息编辑" :visible.sync="editVisible">
+      <el-form :model="user">
+        <el-row>
+          <el-col :span="12">
+            <div class="left-form">
+              <div class="form-li">
+                <el-row>
+                  <el-col :span="5" class="form-title">工号：</el-col>
+                  <el-col :span="19" class="form-body">
+                    <el-input v-model="user.id" placeholder="请输入姓名" disabled></el-input>
+                  </el-col>
+                </el-row>
+              </div>
+              <div class="form-li">
+                <el-row>
+                  <el-col :span="5" class="form-title">姓名：</el-col>
+                  <el-col :span="19" class="form-body">
+                    <el-input v-model="user.name" placeholder="请输入姓名"></el-input>
+                  </el-col>
+                </el-row>
+              </div>
+              <div class="form-li">
+                <el-row>
+                  <el-col :span="5" class="form-title">电话：</el-col>
+                  <el-col :span="19" class="form-body">
+                    <el-input v-model="user.phone" placeholder="请输入电话"></el-input>
+                  </el-col>
+                </el-row>
+              </div>
+            </div>
+          </el-col>
+          <el-col :span="12">
+            <div class="right-form">
+              <div class="form-li">
+                <el-row>
+                  <el-col :span="5" class="form-title">微信：</el-col>
+                  <el-col :span="19" class="form-body">
+                    <el-input v-model="user.wechat" placeholder="请输入微信"></el-input>
+                  </el-col>
+                </el-row>
+              </div>
+              <div class="form-li">
+                <el-row>
+                  <el-col :span="5" class="form-title">职位：</el-col>
+                  <el-col :span="19" class="form-body">
+                    <el-input v-model="user.position" placeholder="请输入职位"></el-input>
+                  </el-col>
+                </el-row>
+              </div>
+            </div>
+          </el-col>
+        </el-row>
+      </el-form>
+      <div slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="submitEdit">确 定</el-button>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
@@ -173,6 +230,7 @@ export default {
       // 近10天招聘人数
       nums: [20, 12, 24, 50, 12, 3, 1, 10, 14, 30],
       editAvatarDialog: false,
+      editVisible: false,
       imageUrl: '',
       user: {
         id: 'M202076625',
@@ -260,10 +318,9 @@ export default {
       tDate = this.doHandleMonth(tDate);
       return tMonth + "-" + tDate;
     },
-    turnEdit() {
-      this.$router.push({
-        path: '/hire/hire_edit'
-      })
+    submitEdit() {
+      this.editVisible = false
+      console.log(this.user)
     }
   },
   mounted() {

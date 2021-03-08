@@ -28,7 +28,6 @@ const HireAttract = () => import("../views/hire-system/attract")
 const HireRelease = () => import("../views/hire-system/release")
 const HireProfile = () => import("../views/hire-system/profile")
 const HireChat = () => import("../views/hire-system/chats")
-const HireEdit = () => import("../views/hire-system/edit")
 const HireAttractDetail = () => import("../views/hire-system/details/attract_detail")
 const HireReleaseDetail = () => import("../views/hire-system/details/release_detail")
 
@@ -141,10 +140,6 @@ const routes = [
       {
         path: "hire_chat",
         component: HireChat
-      },
-      {
-        path: "hire_edit",
-        component: HireEdit
       },
       {
         path: "attract_detail",

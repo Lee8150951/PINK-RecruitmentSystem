@@ -11,8 +11,8 @@
               <li class="relative">
                 <img src="../../../assets/img/avatar/avatar02.png" alt="" class="avatar">
               </li>
-              <li class="user-name">马小超</li>
-              <li class="school-name">华中科技大学 | 硕士</li>
+              <li class="user-name">{{user.name}}</li>
+              <li class="school-name">{{user.education[0].c_school}} | {{user.education[0].c_qualification}}</li>
             </ul>
           </div>
           <div class="base-info">
@@ -20,23 +20,23 @@
               <ul>
                 <li class="info-li">
                   <span class="info-title">性别：</span>
-                  <span class="info-body">男</span>
+                  <span class="info-body">{{user.sex}}</span>
                 </li>
                 <li class="info-li">
                   <span class="info-title">邮箱：</span>
-                  <span class="info-body">762538172@qq.com</span>
+                  <span class="info-body">{{user.email}}</span>
                 </li>
                 <li class="info-li">
                   <span class="info-title">电话：</span>
-                  <span class="info-body">15179384736</span>
+                  <span class="info-body">{{user.phone}}</span>
                 </li>
                 <li class="info-li">
                   <span class="info-title">期望城市：</span>
-                  <span class="info-body">上海</span>
+                  <span class="info-body">{{user.demand.c_excity}}</span>
                 </li>
                 <li class="info-li">
                   <span class="info-title">期望薪资：</span>
-                  <span class="info-body">20K-25K</span>
+                  <span class="info-body">{{user.demand.c_exsalary}}</span>
                 </li>
               </ul>
             </div>
@@ -65,10 +65,10 @@
                     <el-col :span="19">
                       <div class="ei-content">
                         <ul class="ei-ul">
-                          <li class="ei-li">华中科技大学</li>
-                          <li class="ei-li">硕士</li>
-                          <li class="ei-li">电子信息</li>
-                          <li class="ei-li">2020年9月-2023年3月</li>
+                          <li class="ei-li">{{user.education[0].c_school}}</li>
+                          <li class="ei-li">{{user.education[0].c_qualification}}</li>
+                          <li class="ei-li">{{user.education[0].c_major}}</li>
+                          <li class="ei-li">{{user.education[0].c_schooling}}</li>
                         </ul>
                       </div>
                     </el-col>
@@ -92,10 +92,10 @@
                     <el-col :span="19">
                       <div class="ei-content">
                         <ul class="ei-ul">
-                          <li class="ei-li">华中科技大学</li>
-                          <li class="ei-li">本科</li>
-                          <li class="ei-li">软件工程</li>
-                          <li class="ei-li">2016年9月-2020年7月</li>
+                          <li class="ei-li">{{user.education[1].c_school}}</li>
+                          <li class="ei-li">{{user.education[1].c_qualification}}</li>
+                          <li class="ei-li">{{user.education[1].c_major}}</li>
+                          <li class="ei-li">{{user.education[1].c_schooling}}</li>
                         </ul>
                       </div>
                     </el-col>
@@ -124,10 +124,10 @@
                     <el-col :span="19">
                       <div class="ie-content">
                         <ul class="ie-ul">
-                          <li class="ie-li">华为(深圳)科技有限公司</li>
-                          <li class="ie-li">M238490394</li>
-                          <li class="ie-li">Java软件开发师</li>
-                          <li class="ie-li">2020年9月-2023年3月</li>
+                          <li class="ie-li">{{user.internship[0].c_iscompany}}</li>
+                          <li class="ie-li">{{user.internship[0].c_cid}}</li>
+                          <li class="ie-li">{{user.internship[0].c_ispost}}</li>
+                          <li class="ie-li">{{user.internship[0].c_istime}}</li>
                         </ul>
                       </div>
                     </el-col>
@@ -151,10 +151,10 @@
                     <el-col :span="19">
                       <div class="ie-content">
                         <ul class="ie-ul">
-                          <li class="ie-li">腾讯(深圳)科技有限公司</li>
-                          <li class="ie-li">M248491394</li>
-                          <li class="ie-li">Java软件开发师</li>
-                          <li class="ie-li">2021年9月-2021年12月</li>
+                          <li class="ie-li">{{user.internship[1].c_iscompany}}</li>
+                          <li class="ie-li">{{user.internship[1].c_cid}}</li>
+                          <li class="ie-li">{{user.internship[1].c_ispost}}</li>
+                          <li class="ie-li">{{user.internship[1].c_istime}}</li>
                         </ul>
                       </div>
                     </el-col>
@@ -164,7 +164,7 @@
             </el-row>
           </div>
           <div class="annex-col">
-            <el-button type="danger" class="annex-btn">简历查看</el-button>
+            <el-button type="danger" class="annex-btn" @click="resumeDownload">简历下载</el-button>
           </div>
         </div>
       </el-col>
@@ -179,6 +179,59 @@
     components: {PageTitle},
     data() {
       return {
+        user: {
+          // 基本信息
+          id: '100001',
+          name: '马小超',
+          age: '22',
+          sex: '男',
+          email: '73625948@qq.com',
+          phone: '15173859302',
+          // 期望信息
+          demand: {
+            c_excity: '深圳',
+            c_exsalary: '20K-25K',
+          },
+          // 教育经历
+          education: [
+            // 第一学历
+            {
+              c_school: '华中科技大学',
+              c_qualification: '硕士',
+              c_major: '电子信息',
+              c_schooling: '2020年9月-2023年7月'
+            },
+            // 第二学历
+            {
+              c_school: '华中科技大学',
+              c_qualification: '本科',
+              c_major: '软件工程',
+              c_schooling: '2016年9月-2020年7月'
+            }
+          ],
+          // 实习经历
+          internship: [
+            // 第一经历
+            {
+              c_iscompany: '华为(深圳)科技有限公司',
+              c_cid: 'SZ223312321',
+              c_ispost: 'Java软件开发师',
+              c_istime: '2015年9月-2016年3月'
+            },
+            // 第二经历
+            {
+              c_iscompany: '腾讯(深圳)科技有限公司',
+              c_cid: 'SZ223312423',
+              c_ispost: 'Java软件开发师',
+              c_istime: '2020年9月-2023年3月'
+            },
+          ]
+        }
+      }
+    },
+    methods: {
+      resumeDownload() {
+        alert("success!")
       }
     }
   }

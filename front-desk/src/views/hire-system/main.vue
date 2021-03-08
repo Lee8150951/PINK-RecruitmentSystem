@@ -32,13 +32,6 @@
                   </el-button>
                 </el-badge>
               </span>
-              <span>
-                <el-badge :value="10" :max="99" class="item-badge" type="warning">
-                  <el-button type="text" class="top-btn">
-                    <i class="el-icon-mobile"></i>
-                  </el-button>
-                </el-badge>
-              </span>
               <avatar-item></avatar-item>
             </div>
           </el-col>
