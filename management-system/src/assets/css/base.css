@@ -42,3 +42,7 @@ img {
 .height-all {
   height: 100%;
 }
+
+.el-textarea__inner{
+  resize: none;
+}

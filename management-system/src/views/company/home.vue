@@ -9,7 +9,7 @@
           <div class="tl-panel">
             <div class="greet">
               <span class="greet-time">{{greet}}，</span>
-              <span class="greet-target">马小超</span>
+              <span class="greet-target">Admin</span>
             </div>
             <div class="diagram">
               <div id="myChart" :style="{width: '100%', height: '380px'}"></div>
@@ -26,7 +26,7 @@
                   <div class="tips-other">
                     <span>Total number of hr</span>
                     <div class="more-btn_1">
-                      <el-button type="text">more...</el-button>
+                      <el-button type="text" @click="turnToList">more...</el-button>
                     </div>
                   </div>
                 </div>
@@ -38,7 +38,7 @@
                   <div class="tips-other">
                     <span>Total number of hr</span>
                     <div class="more-btn_2">
-                      <el-button type="text">more...</el-button>
+                      <el-button type="text" @click="turnToList">more...</el-button>
                     </div>
                   </div>
                 </div>
@@ -52,16 +52,16 @@
                     <div class="left-tips">
                       <ul>
                         <li class="tip-li">
+                          <i class="el-icon-info"></i>
+                          {{company.e_id}}
+                        </li>
+                        <li class="tip-li">
                           <i class="el-icon-s-goods"></i>
-                          腾讯(深圳)科技有限公司
+                          {{company.e_name}}
                         </li>
                         <li class="tip-li">
                           <i class="el-icon-user-solid"></i>
-                          马化腾
-                        </li>
-                        <li class="tip-li">
-                          <i class="el-icon-phone"></i>
-                          400-23039420
+                          {{company.e_legalrepresentative}}
                         </li>
                       </ul>
                     </div>
@@ -71,15 +71,15 @@
                       <ul>
                         <li class="tip-li">
                           <i class="el-icon-s-cooperation"></i>
-                          IT互联网
+                          {{company.e_businessscope}}
                         </li>
                         <li class="tip-li">
                           <i class="el-icon-s-shop"></i>
-                          股份责任公司
+                          {{company.e_type}}
                         </li>
                         <li class="tip-li">
                           <i class="el-icon-s-opportunity"></i>
-                          中国广东省深圳市
+                          {{company.e_address}}
                         </li>
                       </ul>
                     </div>
@@ -87,7 +87,7 @@
                 </el-row>
               </div>
               <div class="more-col">
-                <el-button type="primary" class="more-btn">查看详情</el-button>
+                <el-button type="primary" class="more-btn" @click="turnToInfo">查看详情</el-button>
               </div>
             </div>
           </div>
@@ -104,10 +104,55 @@ export default {
   components: {MainTitle},
   data() {
     return {
-      greet: ''
+      // 近10天日期
+      dates: [],
+      // 近10天招聘人数
+      nums: [20, 12, 24, 50, 12, 3, 1, 10, 14, 30],
+      greet: '',
+      company: {
+        e_id: '10001',
+        e_name: '腾讯(深圳)科技有限公司',
+        e_legalrepresentative: '马化腾',
+        e_type: '股份有限公司',
+        e_registeredaddress: '中国广东省深圳市',
+        e_businessscope: 'IT互联网',
+        e_address: '中国广东省深圳市',
+        // hr数量
+        hr_num: '20',
+        // 岗位数量
+        post_num: '42'
+      }
     }
   },
   methods: {
+    turnToInfo() {
+      this.$router.push({
+        path: '/company/profile'
+      })
+    },
+    turnToList() {
+      this.$router.push({
+        path: '/company/list'
+      })
+    },
+    // 获取近15日时间
+    doHandleMonth(month){
+      let m = month;
+      if(month.toString().length === 1){
+        m = "0" + month;
+      }
+      return m;
+    },
+    getDay(day){
+      const today = new Date();
+      const target_milliseconds=today.getTime() + 1000*60*60*24*day;
+      today.setTime(target_milliseconds);
+      let tMonth = today.getMonth();
+      let tDate = today.getDate();
+      tMonth = this.doHandleMonth(tMonth + 1);
+      tDate = this.doHandleMonth(tDate);
+      return tMonth + "-" + tDate;
+    },
     // 判断时间
     greetJudge() {
       const now = new Date(),hour = now.getHours()
@@ -135,7 +180,7 @@ export default {
       myChart.setOption({
         xAxis: {
           type: 'category',
-          data: ['3月', '4月', '5月', '6月', '7月', '3月', '4月', '5月', '6月', '7月'],
+          data: this.dates,
           axisLine: {
             lineStyle: {
               type: 'solid',
@@ -166,7 +211,7 @@ export default {
           }
         },
         series: [{
-          data: [20, 20, 22, 18, 22, 20, 20, 22, 18, 22],
+          data: this.nums,
           type: 'bar',
           itemStyle: {
             normal: {
@@ -186,6 +231,9 @@ export default {
     }
   },
   mounted() {
+    for (let i = -9; i <= 0; i ++) {
+      this.dates.push(this.getDay(i))
+    }
     this.drawLine();
     this.greetJudge();
   }

@@ -72,7 +72,7 @@
             index: 2,
             path: '/company/profile',
             icon: 'el-icon-set-up',
-            title: '我的 Profile'
+            title: '公司 Profile'
           },
         ]
       }
