@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <el-header>
-      <bread-crumb>
-        <el-breadcrumb-item><a href="/admin/manage_admin">管理员</a></el-breadcrumb-item>
-        <el-breadcrumb-item>人员列表</el-breadcrumb-item>
-      </bread-crumb>
-    </el-header>
+  <div class="main-body">
+    <div class="header-title">
+      <i class="el-icon-document-copy"></i>
+      员工管理 Admin
+    </div>
     <el-main class="main">
       <div>
         <el-header>
@@ -99,11 +97,8 @@
 </template>
 
 <script>
-// 导入面包屑组件
-import BreadCrumb from "../../components/admin/public/BreadCrumb";
 export default {
   name: "manage_admin",
-  components: {BreadCrumb},
   data() {
     return {
       tableData: [{

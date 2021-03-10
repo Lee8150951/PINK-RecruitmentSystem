@@ -1,46 +1,93 @@
 <template>
-  <el-container>
-    <el-header>
-      <nav-menu></nav-menu>
-    </el-header>
-    <el-container>
-      <el-aside width="270px">
-        <side-bar>
-          <side-bar-item path="/admin/admin_home">
-            <i class="el-icon-s-home" slot="item-icon"></i>
-            <span slot="item-title">总览</span>
-          </side-bar-item>
-          <side-bar-item path="/admin/manage_company">
-            <i class="el-icon-s-cooperation" slot="item-icon"></i>
-            <span slot="item-title">公司管理</span>
-          </side-bar-item>
-          <side-bar-item path="/admin/manage_user">
-            <i class="el-icon-s-custom" slot="item-icon"></i>
-            <span slot="item-title">用户管理</span>
-          </side-bar-item>
-          <side-bar-item path="/admin/manage_admin">
-            <i class="el-icon-user-solid" slot="item-icon"></i>
-            <span slot="item-title">管理员</span>
-          </side-bar-item>
-        </side-bar>
-      </el-aside>
-      <el-main class="app_main">
-        <router-view></router-view>
-      </el-main>
-    </el-container>
-  </el-container>
+  <el-row class="height-all all-bgc">
+    <el-col :span="4" class="height-all">
+      <div class="aside-bar">
+        <div class="logo-col">
+          <el-row>
+            <el-col :span="5">
+              <img src="../../assets/img/logo/logo_white.png" alt="logo" class="company-logo">
+            </el-col>
+            <el-col :span="19">
+              <ul>
+                <li class="main-title">PINK-panel</li>
+              </ul>
+            </el-col>
+          </el-row>
+        </div>
+        <div class="feature-list">
+          <ul>
+            <aside-bar-item v-for="(item, index) in items" :key="item.index" :item="item"></aside-bar-item>
+          </ul>
+        </div>
+      </div>
+    </el-col>
+    <el-col :span="20" class="height-all">
+      <div class="right-content">
+        <div class="nav-bar">
+          <el-row>
+            <el-col :span="22">
+              <div class="search-col">
+                <el-input prefix-icon="el-icon-search" v-model="search" class="search-input"></el-input>
+              </div>
+            </el-col>
+            <el-col :span="2">
+              <div class="avatar-col">
+                <avatar-item></avatar-item>
+              </div>
+            </el-col>
+          </el-row>
+        </div>
+        <div class="main-body">
+          <router-view></router-view>
+        </div>
+      </div>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
-// 导入NavMenu组件
-import NavMenu from "../../components/admin/navmenu/NavMenu";
-// 导入SideBar组件
-import SideBar from "../../components/admin/sidebar/SideBar";
-// 导入SideBarItem组件
-import SideBarItem from "../../components/admin/sidebar/SideBarItem";
+import AsideBarItem from "../../components/admin/asidebar/AsideBarItem";
+import AvatarItem from "../../components/admin/navmenu/AvatarItem";
 export default {
   name: "main",
-  components: {SideBarItem, SideBar, NavMenu}
+  components: {AvatarItem, AsideBarItem},
+  data() {
+    return {
+      search: '',
+      items: [
+        {
+          index: 0,
+          path: '/admin/admin_home',
+          icon: 'el-icon-odometer',
+          title: '总览 Dashboard'
+        },
+        {
+          index: 1,
+          path: '/admin/manage_company',
+          icon: 'el-icon-document-copy',
+          title: '公司 Company'
+        },
+        {
+          index: 2,
+          path: '/admin/manage_user',
+          icon: 'el-icon-user',
+          title: '用户 User'
+        },
+        {
+          index: 3,
+          path: '/admin/manage_admin',
+          icon: 'el-icon-set-up',
+          title: '员工 Admin'
+        },
+        {
+          index: 4,
+          path: '/admin/admin_profile',
+          icon: 'el-icon-setting',
+          title: '我的 Profile'
+        },
+      ]
+    }
+  }
 }
 </script>
 

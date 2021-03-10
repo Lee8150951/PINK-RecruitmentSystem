@@ -1,12 +1,9 @@
 <template>
-  <div>
-    <el-header>
-      <bread-crumb>
-        <el-breadcrumb-item><a href="/admin/manage_company">公司管理</a></el-breadcrumb-item>
-        <el-breadcrumb-item><a href="/admin/manage_company">公司列表</a></el-breadcrumb-item>
-        <el-breadcrumb-item>添加公司</el-breadcrumb-item>
-      </bread-crumb>
-    </el-header>
+  <div class="main-body">
+    <div class="header-title">
+      <i class="el-icon-document-copy"></i>
+      新增公司 Company
+    </div>
     <el-main class="main">
       <el-form ref="form" :model="form" label-width="80px">
         <el-row>
@@ -82,11 +79,8 @@
 </template>
 
 <script>
-// 导入面包屑组件
-import BreadCrumb from "../../components/admin/public/BreadCrumb";
 export default {
   name: "add_company",
-  components: {BreadCrumb},
   data() {
     return {
       form: {

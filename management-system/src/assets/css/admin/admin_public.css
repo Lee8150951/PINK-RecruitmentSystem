@@ -1,7 +1,13 @@
-.el-breadcrumb {
-  line-height: 50px;
+.main-body {
+  padding: 0 35px;
+}
+.header-title {
+  padding: 28px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #4c4c64;
 }
 .main {
   background-color: #ffffff;
-  box-shadow:2px 2px 30px #e3e3e3;
+  border: 1px solid #e0e0e0;
 }

@@ -5,13 +5,13 @@
   background: #99a9bf;
 }
 .grid-content {
-  border-radius: 20px;
   min-height: 600px;
   background-image: linear-gradient(#1de1ad, #04b0e6);
-  box-shadow:2px 2px 30px #d8d8d8;
+  border: 1px solid #eaeaea;
 }
 .left-content {
   float: left;
+  position: relative;
 }
 .el-avatar {
   height: 150px;
@@ -30,8 +30,6 @@
   height: 600px;
   width: 850px;
   background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow:2px 2px 30px #d8d8d8;
 }
 .info {
   margin-left: 100px;
@@ -78,4 +76,10 @@
 .edit-btn {
   float: right;
   margin-top: 50px;
+}
+.avatar {
+  margin-left: 140px;
+  margin-top: 120px;
+  font-size: 30px;
+  border-radius: 50%;
 }

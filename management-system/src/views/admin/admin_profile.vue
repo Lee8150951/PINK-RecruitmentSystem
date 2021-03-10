@@ -1,10 +1,14 @@
 <template>
-  <div>
+  <div class="main-body">
+    <div class="header-title">
+      <i class="el-icon-document-copy"></i>
+      编辑公司 Company
+    </div>
     <el-row>
       <el-col :span="24">
         <div class="grid-content">
           <div class="left-content">
-            <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
+            <img src="../../assets/img/avatar/avatar01.png" alt="" class="avatar">
             <h2>Admin</h2>
             <div class="info">
               <el-col :span="10">
@@ -99,11 +103,8 @@
 </template>
 
 <script>
-  // 导入面包屑组件
-  import BreadCrumb from "../../components/admin/public/BreadCrumb";
   export default {
     name: "admin_profile",
-    components: {BreadCrumb},
     data() {
       return {
         form: {
@@ -117,5 +118,6 @@
 </script>
 
 <style scoped>
+@import "../../assets/css/admin/admin_public.css";
 @import "../../assets/css/admin/profile.css";
 </style>
